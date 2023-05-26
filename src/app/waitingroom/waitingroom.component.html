@@ -1,0 +1,62 @@
+<div class="modal-body modalBg tabSpace" *ngIf="this.show">
+    <div class="playerTable">
+        <div class="playerTab p1" >
+            <!-- <ng-container  *ngIf="this.modal.playersInRoom.length <1 "> -->
+                <div class="imgWrap blueBg">
+                    <label class="tag-lbl blue-lbl" *ngIf="this.top.isHost">Host</label>
+                    <span>A</span>
+                    <img src="{{this.top.avatar!=''?this.top.avatar:this.defaultProfile}}"  alt="">
+                    <!-- <img src="../../assets/img/profilep.png" alt=""> -->
+                </div>
+                <p>{{top.name!=''?top.name:"WAITING.."}}</p>
+            <!-- <button>Switch the player <img src="/assets/img/refresh.png" alt=""></button> -->
+        </div>
+    
+        <div class="playerTab p2">
+            <div class="imgWrap">
+                <label class="tag-lbl red-lbl" *ngIf="this.right.isHost">Host</label>
+                <span>B</span>
+                <img src="{{this.right.avatar!=''?this.right.avatar:this.defaultProfile}}"  alt="">
+            </div>
+            <p>{{right.name!=''?right.name:"WAITING.."}}</p>
+            <!-- <button>Switch the player<img src="/assets/img/refresh.png" alt=""></button> -->
+        </div>
+    
+        <!-- p3 -->
+        <div class="playerTab p3"  >
+            <!-- <ng-container  *ngIf="you "> -->
+                <div class="imgWrap">
+                <label class="tag-lbl red-lbl" *ngIf="this.left.isHost">Host</label>
+
+                    <span>B</span>
+                    <img src="{{this.left.avatar !=''?this.left.avatar:this.defaultProfile}}" alt="">
+                </div>
+                <!-- <p>{{you.name!=''?you.name:"WAITING"}}</p> -->
+            <p>{{left.name !=''?left.name:"WAITING.."}}</p>
+            <!-- <button>Switch the player <img src="/assets/img/refresh.png" alt=""></button> -->
+        </div>
+        <!-- p4 -->
+        <div class="playerTab p4"  >
+            <div class="imgWrap blueBg">
+                <label class="tag-lbl blue-lbl" *ngIf="this.you.isHost">Host</label>
+                <span>A </span> 
+                <img src="{{this.you.avatar !=''?this.you.avatar:this.defaultProfile}}"  alt="">
+            </div>
+            <p>{{you.name!=''?you.name:"WAITING"}}</p>
+            <!-- <button>Switch the player <img src="/assets/img/refresh.png" alt=""></button> -->
+        </div>                           
+    
+    </div>
+    <button class="btn-send-code btn-blue-grd btn-quit" (click)="leaveLobby()">
+        Quit 
+    </button >
+    
+    <button type="button" class="blueBtn" (click)="startGame()" *ngIf=" this.modal.isHost&& this.countPlayersInlobby>3">Play</button>
+    <!-- <button type="button" class="blueBtn" (click)="startGame()" [disabled]="this.modal.playersInRoom.length>3 &&this.modal.isHost">Play</button> -->
+
+</div>
+
+
+
+
+

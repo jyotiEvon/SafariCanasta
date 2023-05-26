@@ -1,0 +1,8 @@
+<app-chat></app-chat>
+<app-message-popup *ngIf="this.modal.showErrorMessage" ></app-message-popup>
+<app-winscreen *ngIf="this.modal.showResult"></app-winscreen>
+
+<app-chat-popup></app-chat-popup>
+<app-reconnect-popup *ngIf="this.modal.reconnectPopup"></app-reconnect-popup>
+<app-loading *ngIf="this.modal.showPhaserProgressBar"></app-loading>
+

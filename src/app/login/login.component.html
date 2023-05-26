@@ -1,0 +1,80 @@
+<div class="outerWrap">
+    <div class="treeTop">
+        <img src="/assets/img/bushes1.png" alt="">
+    </div>
+    <div class="leaveWrap">
+        <div class="leaveTopL">
+            <img src="/assets/img/leaveTopL.png" alt="">
+        </div>
+        <div class="leaveTopR">
+            <img src="/assets/img/leaveTop.png" alt="">
+        </div>
+    </div>
+    <!-- <div class="leaveTop"></div> -->
+    
+    <div class="alignWrap">
+        <div class="frmWrap" >
+            <div class="leopeard">
+                <img src="/assets/img/leopeard/face.png" class="d-block mx-100" class="face">
+                <img src="/assets/img/leopeard/body.png" class="d-block mx-100">
+            </div>
+            <form class="frmCol"  #form="ngForm" (ngSubmit)="login()">
+                <h3>Sign In</h3>
+                <div class="inputWrap">
+                    <input type="text"  name="username" placeholder="Enter User Name/ Email Address" 
+                    [(ngModel)] = "user.username" class="from-control"  #username="ngModel" required >
+                    <!-- error -->
+                    <div *ngIf="username.invalid &&( username.dirty || username.touched)">
+                        <div *ngIf="username.errors?.['required']" class="errorMsg">*Username is required</div>
+                        <div *ngIf="username.errors?.['minlength']" class="errorMsg">*Username must be alteast  1 characters long</div>
+                        <div *ngIf="username.errors?.['maxlength']" class="errorMsg">*Username cannot be more than 20 characters long</div>
+                    </div>
+                </div>
+                <div class="inputWrap">
+                    <input [type]="user.showPassword ? 'text' : 'password'" name="password" placeholder="Enter Password" class="from-control" [(ngModel)] = "user.password" 
+                    #password="ngModel" required >
+                    <span (click)="user.showPassword = !user.showPassword" [ngClass]="{'input-eye':user.showPassword, 'input-eye hide':!user.showPassword}" >
+                        <i [ngClass]="{'far fa-eye':user.showPassword,'far fa-eye-slash':!user.showPassword}" ></i>
+                      </span>
+                    
+                    <!-- <span class="input-eye"><i class="far fa-eye"></i></span> -->
+                    <!-- <span class="input-eye hide"><i class="far fa-eye-slash"></i></span> -->
+                    <!-- error msg -->
+                    <div *ngIf="password.invalid &&( password.dirty || password.touched)">
+                        <div *ngIf="password.errors?.['required']" class="errorMsg">*Password is required</div>
+                        <div *ngIf="password.errors?.['minlength']" class="errorMsg">*Password cannot be less then 8 characters</div>
+                    </div>
+                </div>                
+
+                <ng-container *ngIf="showErrorMsg">
+                    <div class="errorMsg">
+                        <span class="err-icon">!</span>
+                        {{ this.errorMsg}}
+                    </div>
+                </ng-container>
+                <label class="lbl-fp"><a href="" [routerLink]="['/fogotpassword']">Forgot Password</a></label>
+                <button type="submit" class="arrowBtn" [disabled]="form.invalid" [class.disabled-button]="form.invalid" (click)="startSound()" >
+                    <span *ngIf="form.invalid" class="arrowBtntext">Please fill all the fields</span>
+                  </button>
+            </form>
+        </div>
+        <p class="text-center">Or</p>
+        <button class="orng-btn d-block" type="submit" [routerLink]="['/signup']" (click)="startSound()">
+            Sign up 
+        </button>
+    </div>
+</div>
+
+
+<div class="zebra">
+    <img src="/assets/img/zebra.png" class="d-block mx-100">
+</div>
+
+<div class="leavesLB">
+    <img src="/assets/img/leaves.png" alt="">
+</div>
+<div class="leavesRB">
+    <img src="/assets/img/leaves.png" alt="">
+</div>
+
+<app-loader></app-loader>

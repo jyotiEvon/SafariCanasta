@@ -1,0 +1,283 @@
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'kabrio';
+    src: url(../src/fonts/kabrio-Abarth-Heavy.ttf);
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../src/fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url(../src/fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Taz-UltraBlack';
+    src: url(../src/fonts/Taz-UltraBlack.ttf);
+}
+@font-face {
+    font-family: 'ArabotoNormal400';
+    src: url(../src/fonts/ArabotoNormal400.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,body,.from-control{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto-Bold', sans-serif,'Roboto-Light';
+}
+.from-control:focus{outline: none;}
+.from-control:-webkit-autofill,
+.from-control:-webkit-autofill:hover, 
+.from-control:-webkit-autofill:focus {
+    background-color: inherit;
+}
+input[required] ~ div,
+.from-control[required] ~ div {
+    font-size: 11px;
+    color: #f00;
+}
+
+button{
+    cursor: pointer;
+    transition: 0.1s all ease-in-out;
+}
+button:hover, button:focus{
+    transform: scale(1.05);
+}
+::placeholder{
+    opacity: 0.94;
+    color:#fff;
+}
+.outerWrap{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0
+}
+.text-center{
+    text-align: center;
+}
+.m-auto{
+    margin: 0 auto;
+}
+.d-block{
+    display: block;
+}
+.mx-100{
+    max-width: 100%;
+}
+body .modal-content{
+    background: none;
+    border:none
+}
+body .modal-lg{
+    max-width: 800px !important
+}
+body .modal-xl{
+    max-width: 900px !important
+}
+.tabSpace .tab-content > .active {
+    display: block;
+    padding-bottom: 50px;
+}
+.dark-modal.modal-dialog.modal-fullscreen{
+    background: url(assets/img/help/background.jpg) no-repeat left bottom / cover #0a2d29 !important;
+}
+.home-btn{
+    background: transparent;
+    border:none;
+}
+body .modal{
+    overflow: hidden;   
+}
+.header-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh;
+    h2{
+        font-family: 'kabrio';
+        font-size: 2em;
+        margin: 0 auto;
+        color: #fff;
+        text-shadow: 0 0 3px rgba(0,0,0,0.8);
+        color: linear-gradient(red, yellow);
+    }
+    .close{
+        border: none;
+        padding: 0;
+        max-width: 35px;
+        background: none;
+        margin-right: 0;
+        img{
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+.home-btn,
+.homeBtn{
+    background: transparent;
+    border: none;
+    width: 7vw;
+    max-width: 70px;
+    min-width: 40px;
+    img{
+        max-width: 100%;
+    }
+}
+.lboardWrap{
+    .homeBtn{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+.winlose{
+    .homeBtn{
+        position: absolute;
+        right: 4vw;
+        bottom: 4vh;
+    }
+}
+.hidden_item{
+    opacity: 0;
+    pointer-events: none;
+}
+.settingWrap{
+    .topNone{
+        padding: 0 30px;
+    }
+    .modal-footer{
+        justify-content: space-between !important;
+    }
+}
+.ctRoom{
+    .modal-footer{
+        flex-wrap: nowrap;
+        align-items: center;
+        .blueBtn{
+            text-transform: uppercase;
+            font-size: 2.5vh;
+            padding: 10px 18px;
+        }
+        .home-btn{
+            margin-right: 5px;
+        }
+    }
+}
+
+
+.modal-footer.profile-btn-row{
+    top: -70px !important;
+    justify-content: space-between !important;
+}
+
+.errorMsg {
+    left: 15px;
+    bottom: 25%;
+    position: absolute;
+    color: #f00;
+    font-size: 14px;
+    
+
+    .err-icon {
+        background: #f00;
+        width: 16px;    
+        height: 16px;
+        display: inline-block;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 50%;
+    }
+}
+.inputWrap{
+    z-index: 1000000;
+    position: relative;
+    .errorMsg{
+        left: 0;
+        font-size: 12px;
+        position: absolute;
+        top: 100%;
+        @media screen and (max-height:490px){
+            top: 92%;
+            font-size: 10px;
+        }
+    }
+    .input-eye {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        opacity: 0.7;
+        transform: translateY(-50%);
+        i{
+        color: #fff;
+        }
+    }
+}
+
+@media screen and (max-height:500px){
+    body .modal-lg{
+        max-width: 650px !important;
+    }
+    .ctRoom{
+        .modal-footer {
+            .blueBtn{    
+                font-size: 4vh;
+            }
+            .home-btn{
+                margin: 0 10px;
+                max-width: 40px
+            }
+        }
+    }
+
+    .errorMsg {
+        font-size: 12px;
+        top: 55%;
+
+        .err-icon {
+            width: 12px;
+            height: 12px;
+            font-size: 8px;
+        }
+    }
+
+
+}
+@media screen and (max-height: 420px) {
+    .input-eye i {
+        font-size: 14px;
+    }
+}
+app-winscreen{
+    width:100%;
+}
+app-chat{
+    position:unset !important;
+}
+app-reconnect-popup {
+    position: initial;
+    width: 40%;
+    height: 40%;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

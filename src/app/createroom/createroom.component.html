@@ -1,0 +1,84 @@
+<div class="modal-body modalBg tabSpace" *ngIf="this.show">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem (click)="startSound();selectMode('newbie')">
+            <a ngbNavLink>Newbies</a>
+            <ng-template ngbNavContent >
+                <div class="roomList" *ngFor="let room of this.modal.rooms">
+                    <div class="listItem" *ngIf="room.metadata.gameMode == 'newbie'">
+                        <ng-container>
+                            <img src="/assets/img/trtl.png" alt="" class="ttl">
+                            <div>
+                                <p>{{room.metadata.roomTitle}}</p>
+                                <p> Entry Fee: 50 <img src="/assets/img/gems.png" alt="gems"></p>
+                            </div>
+                            <!-- <button class="joinBtn" (click)="startSound();joinRoom(room.roomId)">
+                                Join
+                            </button> -->
+                            <button class="joinBtn" (click)="startSound();debounceHandleJoinPublicRoom(room.roomId)">
+                                Join
+                            </button>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem (click)="startSound();selectMode('relaxed')">
+            <a ngbNavLink>Relaxed</a>
+            <ng-template ngbNavContent>
+                <div class="roomList" *ngFor="let room of this.modal.rooms">
+                    <div class="listItem" *ngIf="room.metadata.gameMode == 'relaxed'">
+                        <img src="/assets/img/trtl.png" alt="" class="ttl">
+                        <div>
+                            <p>{{room.metadata.roomTitle}}</p>
+                            <p> Entry Fee: 50 <img src="/assets/img/gems.png" alt="gems"></p>
+                        </div>
+                        <button class="joinBtn" (click)="startSound();debounceHandleJoinPublicRoom(room.roomId)">
+                            Join
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem (click)="startSound();selectMode('fast')">
+            <a ngbNavLink>fast</a>
+            <ng-template ngbNavContent >
+                <div class="roomList" *ngFor="let room of this.modal.rooms">
+                    <div class="listItem" *ngIf="room.metadata.gameMode == 'fast'">
+                        <img src="/assets/img/trtl.png" alt="" class="ttl">
+                        <div>
+                            <p>{{room.metadata.roomTitle}}</p>
+                            <p> Entry Fee: 50 <img src="/assets/img/gems.png" alt="gems"></p>
+                        </div>
+                        <button class="joinBtn" (click)="startSound();debounceHandleJoinPublicRoom(room.roomId)">
+                            Join
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem (click)="startSound();selectMode('turbo')">
+            <a ngbNavLink>Turbo</a>
+            <ng-template ngbNavContent>
+                <div class="roomList " *ngFor="let room of this.modal.rooms">
+                    <div class="listItem" *ngIf="room.metadata.gameMode == 'turbo'">
+                        <img src="/assets/img/trtl.png" alt="" class="ttl">
+                        <div>
+                            <p>{{room.metadata.roomTitle}}</p>
+                            <p> Entry Fee: 50 <img src="/assets/img/gems.png" alt="gems"></p>
+                        </div>
+                        <button class="joinBtn" (click)="startSound();debounceHandleJoinPublicRoom(room.roomId)">
+                            Join
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+</div>
+
+<ng-template #waitingroom let-modal>
+    <app-waitingroom></app-waitingroom>
+
+</ng-template>
+

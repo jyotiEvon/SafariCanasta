@@ -1,0 +1,49 @@
+<div class="modal-body modalBg">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+            <a ngbNavLink>Settings</a>
+            <ng-template ngbNavContent>
+                <div class="settingBoard">
+                    <div class="frmField">
+                      <p>Sound</p>
+                      <label class="switch" >
+                        <input type="checkbox" id="togBtn" [checked]=" this.model.gameSoundSetting" (click)="checkGameSound()">
+                        <div class="slider round">
+                        <!--ADDED HTML -->
+                        <span class="on">On</span>
+                        <span class="off">Off</span>
+                        <!--END-->
+                        </div>
+                      </label>
+                    </div>
+                    <div class="frmField">
+                        <p>Music</p>
+                        <label class="switch">
+                          <input type="checkbox" id="togBtn"  [checked]=" this.model.musicSetting" (click)="checkBgMusic()">
+                          <div class="slider round">
+                          <!--ADDED HTML -->
+                          <span class="on" >On</span>
+                          <span class="off" >Off</span>
+                          <!--END-->
+                          </div>
+                        </label>
+                      </div>
+                </div>
+                <h2>How to Play ?</h2>
+                <button class="grnBtn" (click)="startSound('btnSound')">
+                    <span>Purchase now</span>
+                    <p>Pay $xx for lifetime </p>
+                </button>
+            </ng-template>
+        </li>        
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+
+      <div class="modal-footer topNone hidden_item">
+        <div class="home-btn" (click)="startSound('btnSound')">
+            <img src="/assets/img/homeBtn.png" alt="">
+        </div>
+    </div>
+
+</div>
+

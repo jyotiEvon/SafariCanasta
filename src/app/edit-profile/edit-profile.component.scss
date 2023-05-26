@@ -1,0 +1,163 @@
+::placeholder {
+    color: #6C4D34;
+}
+.modal-body.edit-pf-bg {
+    width: 54%;
+    max-width: 600px;
+    padding: 40px 0;
+    margin: 0 auto;
+    background: url(../../assets/img/bg_editPopup.png) no-repeat;
+    background-size: 100%;
+}
+.modal-body.edit-pf-bg  .edit-profile-frame {
+    width: 80%;
+    margin: auto auto;
+
+    .frame-row {
+        padding: 10px 0 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #A57645;
+
+        input[type='text'],
+        input[type='password'] {
+            font-size: 1.2rem;
+            color: #6C4D34;
+            line-height: 1;
+            background: none;
+            border: 0 none;
+            outline: 0 none
+        }
+        input.username-lbl,
+        h3.lbl {
+            font-size: 1.3rem;
+            color: #6C4D34;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+    }
+    .modal-footer.btn-row {
+        top: 0;
+        justify-content: center;
+        border-top: 0 none;
+
+        button {
+            font-size: 1rem;
+            font-weight: 500;           
+        }
+        .btn-cancel {
+            border: 0 none;
+            background: none;
+            color: #3b1104;
+            padding: 4px 10px;
+            min-width: 100px;
+        }
+        .btn-confirm {
+            border: 1px solid #5D3A02;
+            background: #744d1b;
+            color: #fff;
+            padding: 4px 10px;
+            min-width: 100px;
+        }
+
+        .btn-confirm[disabled]{
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-confirm .btn-confirm-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: #fff;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* Position the tooltip */
+            position: absolute;
+            top: -5px;  
+            left: 105%;  
+            z-index: 1;
+          }
+          
+          .btn-confirm:hover .btn-confirm-text {
+            visibility: visible;    
+          }
+
+
+        .btn {
+            border: 0 none;
+            background: none;
+            color: #3b1104;
+            padding: 4px 10px;
+            min-width: 100px;
+        }
+        .active, .btn:hover {
+            border: 1px solid #5D3A02;
+            background: #744d1b;
+            color: #fff;
+            padding: 4px 10px;
+            min-width: 100px;
+        }
+    }
+
+    .errorMsg {
+        left: 50%;
+        bottom: 55px;
+        position: absolute;
+        text-align: center;
+        color: #f00;
+        font-size: 14px;
+        width: 100%;
+        transform: translateX(-50%);
+
+        .err-icon {
+            background: #f00;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            font-size: 12px;
+            color: #fff;
+            padding-top: 0;
+            border-radius: 50%;
+        }
+    }
+}
+
+@media screen and (max-height:685px){
+    .profileCol{
+        overflow: auto;
+        margin: 0 65px;
+        flex-direction: column;
+        height: 55vh;
+    }
+}
+
+@media screen and (max-height:540px){
+    .profileCol{
+        height: 35vh;
+    }
+}
+@media screen and (max-width:865px){
+   
+    .tab-content > .active{
+        width: 690px;
+    }
+    .profileCol{
+        overflow: auto;
+        margin: 0 30px;
+        flex-direction: column;
+        .profileDetails{
+            max-width: 480px;
+        }
+        .scoreCard{
+            width: 100%;
+            border:none;
+            border-top: 1px solid #b6935b;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+    }
+}

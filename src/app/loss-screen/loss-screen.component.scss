@@ -1,0 +1,202 @@
+.modal-body.modalBg-md{
+    
+    .headArea{
+        background: url(/assets/img/modalHead.png) no-repeat center bottom;
+        height: 150px;
+        background-size: 100% 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 23px;
+        padding-left: 22px;
+        h2{
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 34px;
+            font-family: 'kabrio';
+            margin: 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,.9), 0 2px 0px #6e1913;
+        }
+    }
+    .modalinner{
+        background: url(/assets/img/minModalBg.png) no-repeat center top;
+        background-size: 100% 100%;
+        height: 100%;
+        min-height: 540px;    
+        margin-top: -74px;
+        .listingTable{
+            max-width: 550px;
+            margin: 0 auto;
+            // padding: 100px 0 0;
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                tr {
+                    th{
+                        background:url(/assets/img/score.png) no-repeat center center;
+                        background-size: 100% 100%;
+                        font-weight: 500;
+                        color: #fff;
+                        font-size: 15px;
+                        text-align: center;
+                        padding: 8px;
+                        width: 33%;
+                        &:nth-child(2){
+                            background:url(/assets/img/ot.png) no-repeat center center;
+                            background-size: 100% 100%;
+                        }
+                        &:nth-child(3){
+                            background:url(/assets/img/rivals.png) no-repeat center center;
+                            background-size: 100% 100%;
+                        }
+                    }
+                    td{
+                        font-size: 16px;
+                        color: #331400;
+                        background: #e9d0a7;
+                        font-weight: 500;
+                        text-align: center;
+                        padding: 8px 0;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                max-width: 20px;
+                                margin-left: 5px;
+                            }
+                        }
+                        &:nth-child(2){
+                            border-left: 2px solid #ae926a;
+                            border-right: 2px solid #ae926a;
+                        }
+                    }
+                    &:last-child td{
+                        background: #69ad00;
+                        color: #fff;
+                        &:last-child{
+                            background: #5a7878;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .scoreGems{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 80px;
+            margin-bottom: 20px;
+            p{
+                background: url(/assets/img/scoreBox.png) no-repeat center center;
+                font-weight: 900;
+                text-shadow: 0 4px 0px rgba(0, 0, 0, 0.2);
+                font-size: 34px;
+                color: #fff;
+                margin: 0;
+                width: 25vw;
+                text-align: center;
+                background-size: 100% 100%;
+                &.lose{
+                    color: #000;
+                    font-weight: 500;
+                    font-size: 20px;
+                    text-shadow: none;
+                    padding: 8px;
+                }
+            }
+            img{
+                max-width: 25px;
+                margin-right: 5px;
+            }
+        }
+        .homeBtn{
+            max-width: 60px;
+            border: none;
+            background: none;
+            position: absolute;
+            right: 30px;
+            bottom: 40px;
+            img{
+                max-width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:850px){
+    .modal-body.modalBg-md .modalinner{
+        background-size: 100% 100%;
+        .listingTable{
+            max-width: 68vw;
+        }
+    }
+    
+}
+@media screen and (max-width:700px){
+    .modal-body.modalBg-md .headArea{
+        height: 120px;
+        padding-bottom: 20px;
+        h2{
+            font-size: 25px;
+        }
+    }
+   
+}
+@media screen and (max-width:610px){
+ 
+}
+@media screen and (max-height:660px){
+    .modal-body.modalBg-md {
+        padding: 0 15px;
+    }
+    .modal-body.modalBg-md .modalinner{
+        height: 80vh;
+        margin-top: -57px;
+        background-size: 100% 100%;
+        min-height: 10px;
+    }
+    .modal-body.modalBg-md .modalinner .listingTable {
+        height: calc(100% - 38vh);
+        overflow: auto;
+      }
+}
+@media screen and (max-height:500px){
+  
+    .modal-body.modalBg-md {
+        .headArea{
+            height: 110px;
+            background-size: 90%;
+            padding-bottom: 20px;
+            h2{
+                font-size: 25px;
+            }
+        }
+        .modalinner{
+            // min-height: 418px;
+            margin-top: -57px;
+            .listingTable{
+                max-width: 70%;
+                table tr td{
+                    padding: 3px 0;
+                }
+            }
+            .scoreGems {
+                padding-top: 55px;
+                margin-bottom: 10px;
+                p{
+                    font-size: 20px;
+                    padding: 6px 0;
+                }
+            }
+        }
+    }
+   
+        
+}

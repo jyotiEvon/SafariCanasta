@@ -1,0 +1,126 @@
+
+<div class="modal-body">
+    <div class="titleHead">
+        Leaderboard
+    </div>
+    <div class="leaderBoardWrap">
+        <div class="tableWrap">
+            <table>
+                <!-- [ngClass]="updateBtn[i]?'active':''"-->
+                <!-- [ngClass]="{'text-success':person.country === 'UK'}" -->
+                <!-- *ngIf='{{(i==0)?a1:i==1?b2:i==3}?c3:''}' -->
+                <tr *ngFor="let lboardInfo of this.model.leaderBoard"  class="{{(lboardInfo.id == me)?'you':''}}">
+                    <td>
+                        <span class="{{(lboardInfo.rank==1)?'a1':(lboardInfo.rank==2)?'b':(lboardInfo.rank==3)?'c':''}}">{{lboardInfo.rank}}</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="{{lboardInfo.avatar}}" alt="">
+                        </div>
+                    </td>
+                    <td>{{lboardInfo.username}}</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> {{lboardInfo.gems}}
+                    </td>
+                    <!-- <td class="value-lbl">
+                        <img src="/assets/img/gems.png" alt=""> {{lboardInfo.gems}}
+                    </td> -->
+                    <td>
+                        <p> <span>Score</span>{{lboardInfo.totalScore}}</p>
+                    </td>
+                </tr>
+                <!--  -->
+                <!-- <tr>
+                    <td>
+                        <span class="b">2</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="/assets/img/users/crocodile.png" alt="">
+                        </div>
+                    </td>
+                    <td>Player Name 1</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> XYZ
+                    </td>
+                    <td>
+                        <p> <span>Score</span>  123456789</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="c">3</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="/assets/img/users/giraffe.png" alt="">
+                        </div>
+                    </td>
+                    <td>Player Name 1</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> XYZ
+                    </td>
+                    <td>
+                        <p> <span>Score</span>  123456789</p>
+                    </td>
+                </tr>
+
+                <tr >
+                    <td>
+                        <span>4</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="/assets/img/users/gorilla.png" alt="">
+                        </div>
+                    </td>
+                    <td>Player Name 1</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> XYZ
+                    </td>
+                    <td>
+                        <p> <span>Score</span>  123456789</p>
+                    </td>
+                </tr>
+
+                <tr class="you">
+                    <td>
+                        <span>5</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="/assets/img/users/ostrich.png" alt="">
+                        </div>
+                    </td>
+                    <td class="wtxt">You</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> XYZ
+                    </td>
+                    <td>
+                        <p> <span>Score</span>  123456789</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>6</span>
+                    </td>
+                    <td>
+                        <div class="userThumb">
+                            <img src="/assets/img/users/rhino.png" alt="">
+                        </div>
+                    </td>
+                    <td>Player Name 1</td>
+                    <td class="gems">
+                        <img src="/assets/img/gems.png" alt=""> XYZ
+                    </td>
+                    <td>
+                        <p> <span>Score</span>  123456789</p>
+                    </td>
+                </tr> -->
+                
+            </table> 
+        </div>
+    </div>
+ 
+</div>

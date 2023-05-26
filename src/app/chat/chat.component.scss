@@ -1,0 +1,212 @@
+.chat, .setting {
+    position: absolute;
+    right: 20px;
+    max-width: 50px;
+    img {
+        max-width: 100%;
+    }
+}
+.setting {
+    top: 20px;
+}
+.chat {
+    bottom: 20px;
+}
+.chatWrap {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(62vh - 90px);
+    .flexWrap {
+        display: flex;
+    }
+    button {
+        background: #cdaf58;
+        display: block;
+        color: #241a02;
+        padding: 6px;
+        box-shadow: 0 3px 1px #573c04;
+        border: none;
+        margin: 3px;
+        width: 100%;
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    p {
+        min-width: 100%;
+    }
+}
+.chatBoard, .settingBoard {
+    background: url(/assets/img/board.png) no-repeat center top;
+    width: 340px;
+    height: 420px;
+    position: absolute;
+    right: 0;
+    background-size: 100% 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 24px 10px 20px 24px;
+    z-index: 99;
+}
+.chatBoard{
+    height: 60vh;
+    width: 35vw;
+}
+.shadowLine {
+    margin: 0;
+    img {
+        max-width: 100%;
+    }
+}
+.nav-tabs.nav {
+    border: none;
+    background: url(/assets/img/tabsBox.png) no-repeat center center;
+    background-size: 100% 50px;
+    display: flex;
+    .nav-link {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 0;
+        text-align: center;
+        &:hover {
+            border: none !important;
+            margin: 0 !important;
+            outline: none;
+            padding: 9px 17px;
+        }
+        #ngb-nav-1.nav-link.active, &.active {
+            background: url(/assets/img/messageActive.png) no-repeat 5px 1px;
+            background-size: 100% 42px;
+            border: none;
+            height: 100%;
+            text-align: center;
+            padding: 10px 0;
+            &:hover {
+                margin: 0 !important;
+            }
+        }
+    }
+    .nav-item {
+        flex: 1;
+        &:focus-visible {
+            border: none;
+            outline: none;
+        }
+        #ngb-nav-1.nav-link.active {
+            background: url(/assets/img/emojiActive.png) no-repeat 6px 2px;
+            background-size: 91% 40px;
+        }
+    }
+}
+.emojiWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 5px;
+    height: calc(62vh - 90px);
+    overflow: auto;
+    button {
+        max-width: 61px;
+        width: 21%;
+        margin: 1vh;
+        border: none;
+        background: none;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.settingBoard {
+    height: 250px;
+    width: 240px;
+}
+.frmField {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    p {
+        margin: 0;
+        color: #fff;
+        font-size: 14px;
+        min-width: 70px;
+    }
+    button {
+        background: url(/assets/img/quitBg.png) no-repeat center center;
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        color: #fff;
+        padding: 8px;
+        background-size: 100% 100%;
+        font-weight: 500;
+    }
+}
+.switch {
+    background: url(/assets/img/on-offBg.png);
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 36px;
+    background-size: 100% 100%;
+}
+.switch input {
+    display: none;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 40%;
+    left: 6px;
+    bottom: 5px;
+    background: url(/assets/img/off.png);
+    -webkit-transition: .4s;
+    transition: .4s;
+    background-size: 100% 100%;
+}
+
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(43px);
+    -ms-transform: translateX(43px);
+    transform: translateX(43px);
+    background: url(/assets/img/on.png);
+    background-size: 100% 100%;
+}
+/*------ ADDED CSS ---------*/
+
+.on {
+    display: none;
+}
+.on, .off {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+.off {
+    left: auto;
+    right: 20px;
+}
+input:checked+.slider .on {
+    display: block;
+}
+input:checked+.slider .off {
+    display: none;
+}
+

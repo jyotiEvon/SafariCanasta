@@ -1,0 +1,97 @@
+
+<div class="modal-body modalBg-md" >
+    <div class="headArea">
+        <h2>{{this.modal.gameState}}</h2>
+    </div>
+    <div class="modalinner">
+        <div class="scoreGems" *ngIf="this.modal.teamScore.status=='ROUND_OVER'">
+            <p>
+               Round Over!
+            </p>
+        </div>
+        <div class="scoreGems" *ngIf="this.modal.teamScore.status=='GAME_OVER' && this.modal.gameState=='You Won!' ">
+            <p>
+                <img src="/assets/img/gems.png" alt=""> 100
+            </p>
+        </div>
+
+        <div class="scoreGems" *ngIf="this.modal.teamScore.status=='GAME_OVER' && this.modal.gameState=='You lost!' ">
+            <p class="lose">Try Again!</p>
+        </div>
+
+       
+        
+        <div class="listingTable pb-5">
+            <table>
+                <tr>
+                    <th>Score</th>
+                    <th>Out Team</th>
+                    <th>Rivals</th>
+                </tr>
+                <tr>
+                    <td>Finished</td>
+                    <td>{{ this.modal.teamScore.roundSummaryMyTeam.finishedP}}</td>
+                    <td>{{ this.modal.teamScore.roundSummaryRivalsTeam.finishedP}}</td>
+                </tr>
+                <tr>
+                    <td>Hand Cards</td>
+                    <td>{{ this.modal.teamScore.roundSummaryMyTeam.handCardsP}}</td>
+                    <td>{{ this.modal.teamScore.roundSummaryRivalsTeam.handCardsP }}</td>
+                </tr>
+                <tr>
+                    <td>Melded Cards</td>
+                    <td>{{ this.modal.teamScore.roundSummaryMyTeam.meldedCardsP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.meldedCardsP}}</td>
+                </tr>
+                <tr>
+                    <td>Natural Cansatas</td>
+                    <td>{{this.modal.teamScore.roundSummaryMyTeam.naturalCanastasP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.naturalCanastasP}}</td>
+                </tr>
+                <tr>
+                    <td>Mixed Cansatas</td>
+                    <td>{{this.modal.teamScore.roundSummaryMyTeam.mixedCanastasP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.mixedCanastasP}}</td>
+                </tr>
+              
+                <!-- <tr>
+                    <td>Natural Cansatas</td>
+                    <td>{{this.myTeamNaturalCanastasPoints}}</td>
+                    <td>{{this.rivalsNaturalCanastasPoints}}</td>
+                </tr> -->
+                <tr>
+                    <td>Aces Cansatas</td>
+                    <td>{{this.modal.teamScore.roundSummaryMyTeam.acesCanastasP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.acesCanastasP}}</td>
+                </tr>
+                <tr>
+                    <td>Wild Cansatas</td>
+                    <td>{{this.modal.teamScore.roundSummaryMyTeam.wildsCanastasP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.wildsCanastasP}}</td>
+                </tr>
+                <tr>
+                    <td>Special Cansatas</td>
+                    <td>{{this.modal.teamScore.roundSummaryMyTeam.specialCanastasP}}</td>
+                    <td>{{this.modal.teamScore.roundSummaryRivalsTeam.specialCanastasP}}</td>
+                </tr>
+                <!-- <tr>
+                    <td>Red Threes</td>
+                    <td>100</td>
+                    <td>0</td>
+                </tr> -->
+                <tr>
+                    <td>Total</td>
+                    <td><span>{{this.modal.teamScore.myTeam}} <img src="/assets/img/crown.png" alt=""></span></td>
+                    <td>{{this.modal.teamScore.rivalsTeam}}</td>
+                </tr>
+                <tr>
+                    <td>Cummulative Score</td>
+                    <td>{{this.modal.teamScore.totalMyTeam}}</td>
+                    <td>{{this.modal.teamScore.totalRivalsTeam}}</td>
+                </tr>
+            </table>
+        </div>
+
+       
+    </div>
+</div>

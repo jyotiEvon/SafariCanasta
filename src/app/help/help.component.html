@@ -1,0 +1,300 @@
+    <div class="overLay">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>Welcome</a>
+                <ng-template ngbNavContent>
+                    <p>The objective of Safari Canasta is to be the first player of a team to play all the cards from your hand into melds, complete two canastas and to go out before the other team does. Canastas consist of seven cards which are either mixed with two wild cards or are natural with no wild card substitutions. All other melds on the board have at least three cards. </p>
+                    <p>This version of Canasta has a modern twist and is a little more challenging of a version as opposed to the traditional Canasta played worldwide. </p>
+                    <p>It's not hard, rather the 3's 7's and Aces are played completely different than what you might be used to. This version also includes a natural wild card canasta and bonus hands that end the round and give lots of points! This version is exhilarating and has more levels of risk and reward and is well worth learning to play.</p>
+                    <p>In Safari Canasta, you can play with friends by a specific game code invitation or randomly with other players by creating or joining a new game in either four rooms based on your preference of pace and or skill level.</p>
+                    <div class="imgWrap">
+                        <div class="cardBox">
+                            <img src="/assets/img/help/melds.png" alt="">
+                            <p>melds</p>
+                        </div>
+                        <div class="cardBox">
+                            <img src="/assets/img/help/canastas.png" alt="">
+                            <p>canastas</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>Card</a>
+                <ng-template ngbNavContent>
+                    <div class="cardColum">
+                        <div class="textContain">
+                            
+                            <p>To begin playing, 108 cards are shuffled at least 5 times and dealt.</p>
+
+                            <h3>Wild Card</h3>
+                            <p>Jokers and 2's are wild. You can use two cards and a wild only when you are making initial melds (Q-Q-Joker). After that, wilds cannot be added to melds of cards until there are five of the natural card in the meld. (e.g. Q-Q-Q-Q-Q-Joker-2) </p>
+                            <p>You can use up to two wilds to complete a canasta or use all wilds to make a natural wild card canasta. In making this type of canasta, it is suggested that you start it early in the game and with a minimum of four wilds, hoping that you and your partner will obtain three more wilds before the other team goes out or the game ends. You will be penalized points if you do not complete the wild card canasta. To open, you technically can use a minimum of three wilds and other melds on board to obtain your required initial meld points.</p>
+                            <p>Wild card canastas can be risky at times and can hold up using wilds for other melds, plus you can't go out until a wild card canasta gets completed. </p>
+                            <p>It is not permitted to add wilds to a 7's canasta or discard wild cards unless you are down to only wild cards in your hand, with the exception of discarding as your final card upon going out.</p>
+
+                            <h3>3's, 7's and Aces</h3>
+                            <p>3's, 7's and Aces may not be discarded on an empty discard pile unless it is the only option in your hand to lay down one of the three choices.</p>
+
+                            <h3>3's</h3>
+                            <p>The 3's are bonus cards and cannot be used for melds. For each hand, they add total point value only after two canastas are made. There are penalty points if no canastas are made. When they are put on the board, you will automatically be dealt replacement card(s) during your turn. </p>
+                        </div>
+                        <div class="imgWrap">
+                            <div class="cardBox">
+                                <img src="/assets/img/help/wildcards.png" alt="">
+                                <p>Wild Card</p>
+                            </div>
+                            <div class="cardBox">
+                                <img src="/assets/img/help/bonuscards.png" alt="">
+                                <p>Bonus Card</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <a ngbNavLink>The Game</a>
+                <ng-template ngbNavContent>
+                    <div class="cardColum">
+                        <div class="textContain">
+                            <h3>Melding</h3>                            
+                            <p>- To create an initial meld you will need a minimum of two cards of the same value with a wild card or a minimum of three cards of the same value to lay down on the board.</p>
+                            <p>- To create additional melds or canastas after opening on the board, you will now need a minimum of three cards of the same value to get on the board or five cards of the same value plus 1-2 wild cards to complete a canasta. </p>
+                            <p> - After melding, laying single cards down is acceptable and is how melds are built into canastas. Make sure wilds are only added to a meld containing five natural cards first.</p>
+                            <p> - An initial meld must include a "natural triple" (e.g. Q,Q,Q) on the board in addition to any melds for required card count minimums. This can be tricky because you wouldn't want to use Aces or 7's as a natural triple, because Aces and 7's have to be natural and not mixed with wilds in order to complete or a penalty will arise. You would not know that early in the game if you could secure 7's or Aces for canastas, so steer clear of using those towards your natural triple.</p>
+                            <p> - You can pick up the deck as part of your initial meld but are not permitted to use that top card as part of your natural triple, nor count that top card as points toward your initial melding.</p>
+                            <p> - If you have a natural canasta in your hand, regardless of point value, you can open on the board. This would be rare and cool!</p>
+                            <p> - Mis-melding by not being able to open will cause a 10 point penalty added to the minimum to open for your team's next turn and only in that round. Penalties during a round can accumulate so be careful to count carefully before adding to board! The next round will reset to whatever the required open meld is based on how many points your team has accrued.</p>
+                        </div>
+                        <div class="imgWrap">
+                            <div class="cardBox">
+                                <img src="/assets/img/help/cleanMeld.png" alt="">
+                                <p>Clean Meld</p>
+                            </div>
+                            <div class="cardBox">
+                                <img src="/assets/img/help/discardpile.png" alt="">
+                                <p>Make a meld using discard pile card</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="4">
+                <a ngbNavLink>Picking up Deck</a>
+                <ng-template ngbNavContent>
+                    <div class="cardColum">
+                        <div class="textContain">
+                            <h3>Picking the Pack</h3>
+                            <p><strong>You can pick the pack on your inital meld under certain conditions:</strong></p>
+                            <p>- You have a required points without including the top card from the discard pile.</p>
+                            <p>- You have a clean meld and pair in hand that matches the top card of the discard pile. the pair cannot contribute to be point count unless combined with upto to two wild cards.</p>
+                            <p>- If the pack is picked with Aces or 7's, the canasta must be melded and completed naturally.</p>
+                            <p>- If the pack is a singel card, you cannot meld all your cards, you must have a card to discard.</p>
+                            <h3>After Picking the Pack</h3>
+                            <p>- Aces or 7's cannot be thrown on an empty discard pile.</p>
+                            <p> - A card already used in canasta cannot be thrown on an empty discard pile. It is a dead card.</p>
+                            <p>- Your turn always ends with a discard.</p>
+                        </div>
+                        <div class="imgWrap mw-20">
+                            <div class="cardBox">
+                                <img src="/assets/img/help/aces.png" alt="">
+                                <p>Aces or 7 can't discard</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="5">
+                <a ngbNavLink>Special Hands</a>
+                <ng-template ngbNavContent>
+                    <p>A special hand is a combination of 14 cards which entitles you to go out by exposing your entire hand after drawing from the deck, without discarding. You are only allowed to put down a special hand if your team has not yet melded any cards.</p>
+                    <p class="mt-3 mb-5">There are several differnet kind of special hands</p>
+                    <div class="row">
+                        <div class="col-4 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Gazelle 3,500 points:</li>
+                                <li class="list-group-item">- three 4-of-a-kind</li>
+                                <li class="list-group-item">- Pair joker or Pair 2's not one of each</li>
+                            </ul>
+                            <img src="/assets/img/help/gazelle.png" alt="" class="gaz">
+                        </div>
+
+                        <div class="col-4 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Meerket 2,500 ponits:</li>
+                                <li class="list-group-item">Pair without wilds</li>
+                            </ul>
+                            <img src="/assets/img/help/meerakat.png" alt="" class="mee">
+                        </div>
+
+
+                        <div class="col-4 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Ostrich 2,000 points:</li>
+                                <li class="list-group-item">Pair without wild cards and a pair of Aces and 7's</li>
+                            </ul>
+                            <img src="/assets/img/help/ostrich.png" alt="" class="ost">
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col-12 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Rhino 2,500 points:</li>
+                                <li class="list-group-item">
+                                    <span>- Pair Ace, Ace</span>
+                                    <span>- Pair 2, 2</span>
+                                    <span>- Three Pairs of anything else</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>- Pair Joker, Ace</span>
+                                    <span>- Pair 7, 7</span>
+                                </li>
+                            </ul>
+                            <img src="/assets/img/help/rhino.png" alt="" class="rnio">
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Gorilla 3,000 Points :</li>
+                                <li class="list-group-item">Two 4-of-a-kind</li>
+                                <li class="list-group-item">Two 3-of-a-kind</li>
+                                <li class="list-group-item">No Wilds</li>
+                            </ul>
+                            <img src="/assets/img/help/gorilla.png" alt="" class="gor">
+                        </div>
+                        <div class="col-6 prl">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Valture 2,500 Points :</li>
+                                <li class="list-group-item">Single 4-of-a-kind</li>
+                                <li class="list-group-item">Two 3-of-a-kind</li>
+                                <li class="list-group-item">Two 2-of-a-kind</li>                                
+                            </ul>
+                            <img src="/assets/img/help/vulture.png" alt="" class="vul">
+                        </div>
+                    </div>
+
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="6">
+                <a ngbNavLink>Kitty Card</a>
+                <ng-template ngbNavContent>
+                    <p>A Kitty Card is the bonus Pick made after a player's initial meld and Its placed in your hand. Since you can't get bonus cards and pick the pack, a player who picks the pack does not get a Kitty card.</p>
+                    <p>The Player from the first team to meld picks four new cards from the deck after discarding. The player from the second team to meld picks three new cards after discarding. Subsequent melds do not get a Kitty card.</p>
+                    <p>A player picking the Kitty card who picks a 3 must wait until that player's next turn to put it down, pick a replacement card and if able, may pick the pack.</p>
+                    <div class="imgWrap mt-5">
+                        <div class="cardBox mwidth">
+                            <img src="/assets/img/help/new4cards.png" alt="">
+                            <p>First team get 4 new cards</p>
+                        </div>
+                        <div class="cardBox mwidth">
+                            <img src="/assets/img/help/new3cards.png" alt="">
+                            <p>Second team get 3 new cards</p>
+                        </div>
+                    </div>                    
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="7">
+                <a ngbNavLink>Going Out</a>
+                <ng-template ngbNavContent>
+                    <p>Playing all cards from the hand onto the table is called Going out. With this, the round ends. the last card can either be discarded or it can be used as a last meld. The team wants to go out needs at least one canasta.</p>
+                    <p>If a player goes out with in one turn and their team has not played any melds before, this is called going out concealed.</p>
+                    <h3>Asking for permission </h3>
+                    <p>When playing in teams, it is possible to ask the partner for permission to go out in this turn, if the parter refuses permission, the player cannot go out in this turn until their partner discarding something other than ace or 7.</p>
+                    <p>Player can be asked with the partner and partner responded with "Yes" or "No".</p>
+
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="8">
+                <a ngbNavLink>Score</a>
+                <ng-template ngbNavContent>
+                    <p>Team needs 8500 points to wins. Score will be calculated as a team combining both players hand.</p>
+
+                    <h3>Base & count score </h3>
+                    <p>- Base score is made up for your points for canastas, 3s and finisher (if your team went out)</p>
+                    <p>- Count score is made up of melded cards, (Including canatas) after subtracting the value of any cards left in your or partners hand. 3s are not counted.</p>
+                    <p>- Add Base+Count for your total score for the hand.</p>
+                    <p>- After the next round, do the same and add the score to your previous total.</p>
+
+                    <h3>Points for scoring</h3>
+                    <table>
+                        <tr>
+                            <td width="70%">Going Out First</td>
+                            <td width="30%">= 100 Points</td>
+                        </tr>
+                        <tr>
+                            <td>Un-natural(Dirty/Mixed) Canasta</td>
+                            <td>= 300 Points</td>
+                        </tr>
+                        <tr>
+                            <td>Natural/Clean Canasta(Red card on top)</td>
+                            <td>= 500 Points</td>
+                        </tr>
+                        <tr>
+                            <td>Aces Canasta (natural)</td>
+                            <td>= 2500 Poits</td>
+                        </tr>
+                        <tr>
+                            <td>7's Canasta</td>
+                            <td>= 2500 Poits</td>
+                        </tr>
+                    </table>
+                    
+
+                    <h3>Scoring for 3s</h3>
+                    <p>If a team declares a special hand, their 3s are not counted.</p>
+                    <table>
+                        <tr>
+                            <td>With 0 canasta</td>
+                            <td>3's are deducted from score</td>
+                        </tr>
+                        <tr>
+                            <td>With 1 canasta</td>
+                            <td>3's are not counted</td>
+                        </tr>
+                        <tr>
+                            <td>With 2 canasta</td>
+                            <td>3's are added to score</td>
+                        </tr>
+                    </table>
+                </ng-template>
+            </li>
+
+            <li [ngbNavItem]="9">
+                <a ngbNavLink>Advance Play</a>
+                <ng-template ngbNavContent>
+                    <h3>Wild Cards</h3>
+                    <p>Signaling is the first round of play allows partners to calculate if they have a minimum of five wild cards in hands and to decide whether or not to go for a wild card canasta.</p>
+                    <p>To signal that you have three or more wild cards, discard a 10-point card. if your partner has two or more wild cards, they should respond with a 10-point card. if they have less than two wild cards, they should respond with a 5-point card.</p>
+                    <h3>Aces & 7's</h3>
+                    <p>A Player having more than two aces or more than two 7's should discard one as a signal to their partner. The Partner will then discard all aces or 7's to give a count and to decide about trying for a pure aces or 7's canasta.</p>
+
+                    <div class="imgWrap mt-5">
+                        <div class="cardBox mwidth">
+                            <img src="/assets/img/help/discard5point.png" alt="">
+                            <p>Discard A 5 points card for less than two wild cards</p>
+                        </div>
+                        <div class="cardBox mwidth">
+                            <img src="/assets/img/help/discard10point.png" alt="">
+                            <p>Discard A 10 points card for less than three wild cards</p>
+                        </div>
+                    </div>  
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="10" class="arrowIcon">
+                <a>
+                    <i class="	fas fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div [ngbNavOutlet]="nav" class="innerContent"></div>

@@ -1,0 +1,93 @@
+<div class="outerWrap">
+  <div class="treeTop">
+      <img src="/assets/img/bushes1.png" alt="">
+  </div>
+  <div class="leaveWrap">
+      <div class="leaveTopL">
+          <img src="/assets/img/leaveTopL.png" alt="">
+      </div>
+      <div class="leaveTopR">
+          <img src="/assets/img/leaveTop.png" alt="">
+      </div>
+  </div>
+  
+  <div class="alignWrap">
+      <div class="frmWrap" >
+          <div class="leopeard">
+              <img src="/assets/img/leopeard/face.png" class="d-block mx-100" class="face">
+              <img src="/assets/img/leopeard/body.png" class="d-block mx-100">
+          </div>
+          <form class="frmCol" #form="ngForm" (ngSubmit)="registerUser(form.invalid)">
+              <h3>Sign Up</h3>
+              <!-- Input field -->
+              <div class="inputWrap">
+                  <input type="text" id="username" name="username" placeholder="Enter User Name" [(ngModel)] = "user.username" minlength="3" maxlength="20"  class="from-control" #username="ngModel" required
+                  pattern="^[a-zA-Z0-9_]{3,15}">
+                  <!-- error msg -->
+                  <div *ngIf="username.invalid &&( username.dirty || username.touched)">
+                    <div *ngIf="username.errors?.['required']" class="errorMsg">*Username is required</div>
+                    <div *ngIf="username.errors?.['minlength']" class="errorMsg">*Username must be alteast  3 characters long</div>
+                    <div *ngIf="username.errors?.['maxlength']" class="errorMsg">*Username cannot be more than 15 characters long</div>
+                    <div *ngIf=" user.username.length>2 && user.username.length<15  && username.errors?.['pattern']" class="errorMsg">*Username field should not contains space and special char</div>
+                  </div>
+              </div>
+              <div class="inputWrap">
+                  <input type="email" name="email" placeholder="Enter Email Address"  [(ngModel)] = "user.email" class="from-control" #email="ngModel"  required 
+                  pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+                   <!-- error msg -->
+                   <div *ngIf="email.invalid &&( email.dirty ||email.touched)">
+                    <div *ngIf="email.errors?.['required']" class="errorMsg">*Email is required</div>
+                    <!-- <div *ngIf="email.errors?.['email']">*Please enter valid email address</div> -->
+                    <div *ngIf="email.errors?.['pattern']" class="errorMsg">*Please enter valid email address</div>
+
+                  </div>
+              </div>
+              <!-- <div class="errorMsg">{{this.model.authError}} </div> -->
+
+              <div class="inputWrap">
+                <input  [type]="user.showPassword ? 'text' : 'password'" name="password" placeholder="Enter Password"  [(ngModel)] = "user.password" class="from-control" minlength="8" #password="ngModel" required>
+                <span (click)="user.showPassword = !user.showPassword" [ngClass]="{'input-eye':user.showPassword, 'input-eye hide':!user.showPassword}" >
+                  <i [ngClass]="{'far fa-eye':user.showPassword,'far fa-eye-slash':!user.showPassword}" ></i>
+                </span>
+
+                <!-- <span class="input-eye"><i class="far fa-eye"></i></span> -->
+                <!-- <span class="input-eye hide" ><i class="far fa-eye-slash"></i></span> -->
+                  <!-- error msg -->
+                  <div *ngIf="password.invalid &&( password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.['required']" class="errorMsg">*Password is required</div>
+                    <div *ngIf="password.errors?.['minlength']" class="errorMsg">*Password cannot be less then 8 characters</div>
+                  </div>
+              </div>
+              <!-- {{this.model.authError}} -->
+              <ng-container *ngIf="this.showErrorMsg" >
+                  <div class="errorMsg">
+                      <span class="err-icon">!</span>
+                      {{ this.errorMsg}}
+                  </div>
+              </ng-container>
+                <!-- [ngClass]="updateBtn[i]?'active':''"-->
+
+              <button type="submit" class="arrowBtn"  [ngClass]="form.invalid?'arrowBtn-disabled':''" (click)="startSound();validateForm(form.invalid)" >
+                <span *ngIf="this.showText" class="arrowBtntext">Please fill all the fields</span>
+              </button>
+             
+          </form>
+      </div>
+      <p class="text-center">Already have an account</p>
+      <button class="orng-btn d-block" type="submit" [routerLink]="['/login']" (click)="startSound()">
+          Log In 
+      </button>
+  </div>
+</div>
+<div class="zebra">
+  <img src="/assets/img/zebra.png" class="d-block mx-100">
+</div>
+
+<div class="leavesLB">
+  <img src="/assets/img/leaves.png" alt="">
+</div>
+<div class="leavesRB">
+  <img src="/assets/img/leaves.png" alt="">
+</div>
+
+<app-loader></app-loader>

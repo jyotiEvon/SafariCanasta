@@ -1,0 +1,67 @@
+<div class="outerWrap">
+    <div class="treeTop">
+        <img src="../../assets/img/bushes1.png" alt="">
+    </div>
+    <div class="leaveWrap">
+        <div class="leaveTopL">
+            <img src="../../assets/img/leaveTopL.png" alt="">
+        </div>
+        <div class="leaveTopR">
+            <img src="../../assets/img/leaveTop.png" alt="">
+        </div>
+    </div>
+    <!-- <div class="leaveTop"></div> -->
+    
+    <div class="alignWrap">
+        <div class="frmWrap">
+            <div class="leopeard">
+                <img src="../../assets/img/leopeard/face.png" class="d-block mx-100" class="face">
+                <img src="../../assets/img/leopeard/body.png" class="d-block mx-100">
+            </div>
+            <form class="frmCol" #form="ngForm" (ngSubmit)="verifyEmail(form)">
+                <h3>Verify Email</h3>
+                <span style="color: rgb(124, 75, 58);">*A code has been sent your registered email. Please enter code to verify your account.</span>
+
+                <div class="inputWrap">
+                    <input type="text" placeholder="Enter Code Here" class="from-control" name="varifyCode" [(ngModel)] = "varifyCode" #verifycode="ngModel" required>
+                    <div *ngIf="verifycode.invalid &&( verifycode.dirty || verifycode.touched)">
+                        <div *ngIf="verifycode.errors?.['required']">
+                            *Verification code is required
+                        </div>
+                    </div>
+                    
+                </div>
+                <ng-container *ngIf="showErrorMsg">
+                    <div class="errorMsg">
+                        <span class="err-icon">!</span>
+                        {{ this.errorMsg}}
+                    </div>
+                </ng-container>
+
+                <button class="btn-send-code btn-blue-grd " [disabled]="form.invalid" (click)="startSound()" [class.disabled-button]="form.invalid" >
+                    Verify Code
+                </button>
+                <!-- <span *ngIf="form.invalid" class=".btn-blue-grdtext">Please Enter the code </span>  -->
+              
+                <p class="text-center back-txt-link" [routerLink]="['/signup']">Back</p>        
+            </form>
+        </div>
+        <!-- <p class="text-center">Or</p>
+        <button class="orng-btn d-block" type="submit" [routerLink]="['/signin']">
+            Sign In 
+        </button> -->
+    </div>
+</div>
+
+
+<div class="zebra">
+    <img src="/assets/img/zebra.png" class="d-block mx-100">
+</div>
+
+<div class="leavesLB">
+    <img src="../../assets/img/leaves.png" alt="" />
+</div>
+<div class="leavesRB">
+    <img src="../../assets/img/leaves.png" alt="" />
+</div>
+<app-loader></app-loader>

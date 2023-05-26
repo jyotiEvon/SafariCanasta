@@ -1,0 +1,360 @@
+:root{
+    -progress:0;
+}
+.alignWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.outerWrap {
+    background: url(../../assets/img/mobile-bg-min.jpg) center bottom;
+    background-size: cover;
+    .frmWrap {        
+        background: url(../../assets/img/popup-bg.png) no-repeat center -8px;
+        width: 80vw;
+        background-size: auto;
+        background-size: 100% 100%;
+        height: 80vh;
+        margin-bottom: 0;
+        position: relative;
+        img {
+            max-width: 100%;
+        }
+        .frmCol{
+            width: 38vw;
+            margin: 30vh auto 0;
+            padding: 0 10px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h3{
+                color:#fff;
+                text-align: center;
+                margin: 30px 0 auto;
+                text-shadow:  0 2px 2px #a98c62;
+                font-size: 25px;
+            }
+            .inputWrap{
+                margin: 15px 0 6px;
+                
+                .from-control{
+                    background: url(../../assets/img/inputBg.png) left top no-repeat;
+                    font-size: 20px;
+                    color: #fff;
+                    width: 100%;
+                    border: none;
+                    padding: 10px;
+                    display: block;
+                    box-sizing: border-box;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .arrowBtn{
+            background: url(../../assets/img/enter.png) center center no-repeat;
+            min-height: 55px;
+            min-width: 50px;
+            background-size: 50px 55px;
+            border:none;
+            margin: auto 0 0 auto;
+            
+        }
+    }
+}
+.signup-btn {
+    background: url(../../assets/img/mobile-bg-min.jpg) center top;
+}
+.treeTop {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    img{
+        max-width: 100%;
+    }
+}
+.leaveTop {
+    background: url(../../assets/img/leaveTop.png) center top no-repeat;
+    height: 440px;
+    background-size: cover;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    z-index: 1;
+}
+.leavesRB, .leavesLB {
+    width: 29%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    
+    img{
+        max-width: 100%;
+    }
+}
+.leavesRB {
+    left: 0;
+    right: auto;
+    transform: rotateY(180deg);
+}
+.leaveWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    .leaveTopL , .leaveTopR{
+        max-width: 18vw;
+        transform: rotateY(180deg);
+        img{
+            max-width: 100%;
+        }
+    }
+    .leaveTopL {
+        max-width: 25vw
+    }
+}
+
+p{
+    color:#fff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.loading-image-wrap {
+    max-width: 900px;
+    width: 70%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 100%;
+    }
+}
+.progress-bar-wrap {
+    background: #0B0E0E;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 3px;
+    display: flex;
+    height: 16px;
+    width: 500px;
+    position: absolute;
+    bottom: 90px;
+  }
+  .progress-bar-wrap::before {
+      content: '';
+      display: block;
+      width: 90%;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      background: url(../../assets/loadingbar/bg_particles.png) no-repeat center center;
+      background-size: 100%;
+  }
+  
+  .progress-value {
+    animation: 6s normal forwards;
+    box-shadow: 0 10px 40px -10px #111;
+    border-radius: 100px;
+    background: #FEE83E;
+    height: 12px;
+    width: 0;
+
+    .progress-vehicle {
+        width: 180px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: -30px;
+        margin-left: -80px;
+        background: url(../../assets/loadingbar/Jeep_Smoke.png) no-repeat;
+        background-size: 100%;
+        animation:  5s normal forwards;
+    }
+  }
+  
+//   @keyframes load {
+//     0% { width: 0; }
+//     100% { width: 100%; }
+//   }
+//   @keyframes vehcileMove {
+//     0% { left: 0; }
+//     100% { left: 75%; }
+//   }
+  .progress-val-data {
+    display: block;
+    font-size: 42px;
+    font-weight: 700;
+    color: #FEE83E;
+    width: 100px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+
+    .value-data {
+        font-size: 42px;
+        font-weight: 700;
+    }
+  }
+//   @keyframes vehcileMoveVal {
+//     0% { left: 0; content: '0'; }
+//     100% { left: 75%; content: '75%'; }
+//   }
+
+/* load SPINNER */
+// .load-spinner-frame {
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     z-index: 1;
+//     left: 0;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba($color: #fff, $alpha: 0.3);
+// }
+// .load-spinner {
+//     height: 95px;
+//     width: 95px;
+//     border: 5px solid transparent;
+//     border-top-color: #fff;
+//     border-bottom-color: #fff;
+//     border-radius: 50%;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     z-index: 2;
+//     transform: translate(-50%, -50%);
+//     -webkit-animation: spin 3s linear infinite;
+//     animation: spin 3s linear infinite;
+//   }
+  
+//   .load-spinner::before{
+//     content: "";
+//     position: absolute;
+//     top: 20px;
+//     right: 20px;
+//     bottom: 20px;
+//     left: 20px;
+//     border: 5px solid transparent;
+//     border-top-color: #fff;
+//     border-bottom-color: #fff;
+//     border-radius: 50%;
+//     -webkit-animation: spin 1.5s linear infinite;
+//     animation: spin 1.5s linear infinite;
+//     box-shadow: 0 8px 70px BLACK;
+//   }
+  
+//   @-webkit-@keyframes spin {
+//     -webkit-from {
+//       -webkit-transform: rotate(0deg);
+//       -ms-transform: rotate(0deg);
+//       transform: rotate(0deg);
+//     }
+//     -webkit-to {
+//       -webkit-transform: rotate(360deg);
+//       -ms-transform: rotate(360deg);
+//       transform: rotate(360deg);
+//     }
+//   }
+  
+//   @-webkit-keyframes spin {
+//     from {
+//       -webkit-transform: rotate(0deg);
+//       transform: rotate(0deg);
+//     }
+//     to {
+//       -webkit-transform: rotate(360deg);
+//       transform: rotate(360deg);
+//     }
+//   }
+  
+//   @keyframes spin {
+//     from {
+//       -webkit-transform: rotate(0deg);
+//       transform: rotate(0deg);
+//     }
+//     to {
+//       -webkit-transform: rotate(360deg);
+//       transform: rotate(360deg);
+//     }
+//   }
+      
+// @media screen and (max-height:490px){
+//     .leopeard{
+//         bottom: -11vh;
+//     }
+//     .leaveWrap .leaveTopL{
+//         max-width: 20vw;
+//     }
+//     .treeTop{
+//         img{
+//             position: relative;
+//             top: -50px;
+//         }
+//     }
+//     .outerWrap .frmWrap {
+//         width: 70vw;
+//         height: 100vh;
+//         background-position: center -30px;
+//         .frmCol {
+//             padding: 0 25px;
+//             margin: 24vh auto 0;
+//             .inputWrap {
+//             margin: 8px 0 6px;
+//             .from-control{
+//                 font-size: 16px;
+//                 padding: 5px 10px;
+//                 }
+//             }
+//             h3{
+//                 margin-bottom: 2vh;
+//                 margin-top: 0;
+//             }
+//         }
+//         .arrowBtn{
+//             margin: auto 0 30px auto;
+//         }
+//     }
+//     .orng-btn{
+//         width: 150px;
+//     }
+// }
+// @media screen and (max-height:450px){
+//     .outerWrap .frmWrap {
+//         background-size: 72vw 80vh;
+//         .arrowBtn{
+//             min-height: 45px;
+//             min-width: 40px;
+//             background-size: contain;
+//         }
+//         .frmCol h3{
+//             font-size: 20px;
+//         }
+//     }
+//     p{
+//         font-size: 15px;
+//     }
+    
+// }

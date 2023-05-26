@@ -1,0 +1,365 @@
+<!-- <div style="position: fixed;z-index:99;height:30px">
+    <button (click)="openWL(winner)">win/lose</button>
+    <button (click)="openLB(leaderboard)">learderBoard</button>
+    <button (click)="openPF(profile)">profile</button>
+    <button (click)="openHp(help)">help</button>
+    <button (click)="openCR(createRoom)">CreateRoom</button>  
+    <button [routerLink]="['/login']">login</button>
+    <button [routerLink]="['/signup']">signup</button>
+</div> -->
+<div class="cloud"></div>
+<div class="sky"></div>
+<div class="tree"></div>
+<div class="giraffe">
+  <div class="head"></div>
+  <div class="body"></div>
+</div>
+<div class="elephant">
+  <div class="head"></div>
+  <div class="body"></div>
+</div>
+
+<app-loader></app-loader>
+
+<!-- user actions  -->
+<div class="userActionTop">
+  <div class="user" (click)="startSound(); openPF(profile)">
+    <ng-container *ngIf="this.modal.avatar == ''"
+      ><img src="/assets/img/users/lion.png" alt=""
+    /></ng-container>
+    <ng-container *ngIf="this.modal.avatar != ''">
+      <img src="{{ this.modal.avatar }}" alt=""
+    /></ng-container>
+
+    <!-- <h4>{{this.modal.userName}}</h4> -->
+    <p class="value-lbl">{{ this.modal.userName }}</p>
+  </div>
+  <div class="life">
+    <img src="/assets/img/gems.png" alt="" />
+    <!-- <h4>{{this.modal.gems}}</h4> -->
+    <p class="value-lbl">{{ this.modal.gems }}</p>
+    <button (click)="startSound()">
+      <img src="/assets/img/add.png" alt="" />
+    </button>
+  </div>
+</div>
+<!-- user actions  -->
+
+<div class="outerWrap">
+  <div class="leaveWrap">
+    <div class="leaveTopL">
+      <img src="/assets/img/leaveTopL.png" alt="" />
+    </div>
+    <div class="leaveTopR">
+      <img src="/assets/img/leaveTop.png" alt="" />
+    </div>
+  </div>
+
+  <div class="logoLobby" (click)="startSound(); openCR(createRoom)">
+    <!-- <div class="logoLobby" (click)="startSound();openER(errorInRoom)"> -->
+    <img src="/assets/img/safariLogo.png" alt="" class="topIg" />
+    <div class="loinFace">
+      <img src="/assets/img/lionFace.png" alt="" />
+    </div>
+    <div class="nameShade" (click)="startSound()">
+      <img src="/assets/img/nameShade.png" alt="" />
+      <p class="board">Go to lobby</p>
+    </div>
+  </div>
+
+  <!-- <ng-template #content let-modal>
+        <app-roomselection></app-roomselection>
+        <div class="modal-footer">
+            <button type="button" class=" home-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <img src="/assets/img/homeBtn.png" alt="">
+            </button>
+            <button type="button" class="blueBtn">Create Room</button>
+        </div>
+    </ng-template> -->
+</div>
+
+<div class="stoneWrap">
+  <div class="shop" (click)="startSound(); openHp(help)">
+    <img src="/assets/img/stone/shop.png" alt="" />
+  </div>
+  <div class="bushes">
+    <img src="/assets/img/bushes.png" alt="" />
+  </div>
+
+  <div class="setting" (click)="startSound(); openst(setting)">
+    <img src="/assets/img/stone/setting.png" alt="" />
+  </div>
+
+  <div class="share"  (click)="shareApp()">
+    <img src="/assets/img/stone/share.png" alt="" />
+  </div>
+
+  <div class="stone">
+    <img src="/assets/img/stone/rocks.png" alt="" />
+  </div>
+  <div class="shrub">
+    <img src="/assets/img/shrub.png" alt="" />
+  </div>
+
+  <div class="lboard">
+    <img
+      src="/assets/img/stone/leaderboard.png"
+      alt=""
+      (click)="startSound(); openLB(leaderboard); showLeaderboard()"
+    />
+    <span>
+      <img src="/assets/img/vulture.png" alt="" />
+    </span>
+  </div>
+</div>
+
+<ng-template #winner let-modal>
+  <app-winscreen></app-winscreen>
+  <button
+    class="homeBtn"
+    aria-label="Close"
+    (click)="startSound(); modal.dismiss('Cross click')"
+  >
+    <img src="/assets/img/homeBtn.png" alt="" />
+  </button>
+</ng-template>
+
+<ng-template #createRoom let-modal>
+  <app-createroom></app-createroom>
+
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="home-btn"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="
+        startSound(); openRS(roomselection); modal.dismiss('Cross click')
+      "
+    >
+      Create Public Room
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); openPR(createPR); modal.dismiss('Cross click')"
+    >
+      Create Private Room
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); openJR(joinroom); modal.dismiss('Cross click')"
+    >
+      Join Private Room
+    </button>
+    <button type="button" class="home-btn">
+      <img src="/assets/img/switch.png" alt="" />
+    </button>
+  </div>
+</ng-template>
+
+<!-- LeaderBoard -->
+<ng-template #leaderboard let-modal>
+  <app-leaderboard></app-leaderboard>
+  <button
+    class="homeBtn"
+    aria-label="Close"
+    (click)="startSound(); modal.dismiss('Cross click')"
+  >
+    <img src="/assets/img/homeBtn.png" />
+  </button>
+</ng-template>
+
+<!-- Profile -->
+<ng-template #profile let-modal>
+  <app-profile></app-profile>
+  <div class="modal-footer topNone profile-btn-row">
+    <button
+      type="button"
+      class="home-btn m-2"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click'); logout()"
+    >
+      <img src="/assets/img/logout.png" alt="" />
+    </button>
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+  </div>
+</ng-template>
+
+<!-- setting -->
+<ng-template #setting let-modal>
+  <app-setting></app-setting>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="home-btn m-2"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click'); logout()"
+    >
+      <img src="/assets/img/logout.png" alt="" />
+    </button>
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+  </div>
+</ng-template>
+
+<!-- help -->
+<ng-template #help let-modal>
+  <div class="header-col">
+    <h2>HELP</h2>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/help/cross.png" alt="" />
+    </button>
+  </div>
+  <app-help></app-help>
+</ng-template>
+
+<!-- roomselection -->
+<ng-template #roomselection let-modal>
+  <app-publicroomcode></app-publicroomcode>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+    <!-- <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); createPublicRoom()"
+    >
+      Create
+    </button> -->
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); debounceHandleCreatePublicRoom()"
+    >
+      Create
+    </button>
+  </div>
+</ng-template>
+
+<!-- create private room -->
+<ng-template #createPR let-modal>
+  <app-createprivateroom></app-createprivateroom>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); modal.dismiss('Cross click'); createRoomCode()"
+    >
+      Create
+    </button>
+  </div>
+</ng-template>
+
+<!-- private room code -->
+<ng-template #privateroom let-modal>
+  <app-privateroomcode></app-privateroomcode>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+    <button type="button" class="blueBtn" (click)="startSound(); shareCode()">
+      Send Code
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); modal.dismiss('Cross click'); startPrivateRoom()"
+    >
+      start
+    </button>
+  </div>
+</ng-template>
+
+<!-- join room -->
+<ng-template #joinroom let-modal>
+  <app-joinroom></app-joinroom>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="m-2 home-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/homeBtn.png" alt="" />
+    </button>
+    <button
+      type="button"
+      class="blueBtn"
+      (click)="startSound(); debounceHandleJoinPrivateRoom()"
+    >
+      Join
+    </button>
+  </div>
+</ng-template>
+
+<!-- waiting room -->
+<ng-template #waitingroom let-modal>
+  <app-waitingroom></app-waitingroom>
+</ng-template>
+
+<ng-template #errorInRoom let-modal>
+  <app-room-popup></app-room-popup>
+  <div class="modal-footer topNone">
+    <button
+      type="button"
+      class="m-2 orng-btn"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      CLOSE
+    </button>
+  </div>
+
+  <!-- <div> -->
+  <!-- <button class="greyBtn" >End Game</button> -->
+  <!-- <button class="orng-btn">CLOSE</button> -->
+  <!-- </div> -->
+</ng-template>
+
+<app-reconnect-popup *ngIf="this.modal.reconnectPopup"></app-reconnect-popup>
+
+

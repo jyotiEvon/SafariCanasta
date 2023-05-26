@@ -1,0 +1,76 @@
+<div class="modal-body modalBg profile-modal-body">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+            <a ngbNavLink (click)="startSound()">Profile</a>
+            <ng-template ngbNavContent>
+                <div class="profileCol">
+                    <div class="profileDetails">
+                        <div class="userMainImg">
+                            <img src="{{this.model.avatar}}" alt="">
+                            <div class="userDetails" (click)="startSound()" >
+                                <p>{{this.model.userName}}</p>
+                                <p>{{this.model.email}}</p>
+                                <!-- <p>{{this.model.email}}</p> -->
+                                <!-- <input type="text"  [(ngModel)]="this.model.userName"  [readonly]="!editable" > -->
+                                <!-- <input type="text" [(ngModel)]="this.model.email" [readonly]="true" > -->
+                                <!-- <div class="passwordWrap">
+                                    <label for="">Password</label>
+                                    <input type="password" value="password" [readonly]="true">
+                                </div> -->
+                                <button (click)="startSound();editDetails()">
+                                    Edit details <img src="/assets/img/edit.png" alt="">
+                                </button>                               
+                            </div>
+                        </div>
+                        <div class="otherThumb">
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/lion.png');selectedProfile(0)" [ngClass]="this.profileClicked[0]?'active':''"><img src="//assets/img/users/lion.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/s.png');selectedProfile(1)" [ngClass]="this.profileClicked[1]?'active':''"><img src="/assets/img/users/s.png" alt="" ></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/giraffe.png');selectedProfile(2)" [ngClass]="this.profileClicked[2]?'active':''"><img src="/assets/img/users/giraffe.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/rhino.png');selectedProfile(3)" [ngClass]="this.profileClicked[3]?'active':''"><img src="/assets/img/users/rhino.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/gorilla.png');selectedProfile(4)" [ngClass]="this.profileClicked[4]?'active':''"><img src="/assets/img/users/gorilla.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/elephant.png');selectedProfile(5)" [ngClass]="this.profileClicked[5]?'active':''"><img src="/assets/img/users/elephant.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/crocodile.png');selectedProfile(6)" [ngClass]="this.profileClicked[6]?'active':''"><img src="/assets/img/users/crocodile.png" alt=""></div>
+                            <div class="thumb" (click)="startSound();updateProfile('/assets/img/users/ostrich.png');selectedProfile(7)"  [ngClass]="this.profileClicked[7]?'active':''"><img src="/assets/img/users/ostrich.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="scoreCard">
+                        <ul>
+                            <li>
+                                <span>Highest Score</span><p>{{this.model.highestScore}}</p>
+                            </li>
+                            <li>
+                                <span>Hands Play</span><p>{{this.model.handsPlayed}}</p>
+                            </li>
+                            <li>
+                                <span>Best Hands</span><p>{{this.model.bestHand}}</p>
+                            </li>
+                            <li>
+                                <span>Hands Won</span><p>{{this.model.handsWon}}</p>
+                            </li>
+                            <li>
+                                <span>Hands Lost</span><p>{{this.model.handsLost}}</p>
+                            </li>
+                            <li>
+                                <span>Unfinished games</span><p>{{this.model.unfinishedGames}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+        </li>        
+      </ul>
+      <div [ngbNavOutlet]="nav"></div>
+
+      <div class="modal-footer topNone hidden_item">
+        <div type="button" class="btn  home-btn" (click)="startSound()">
+            <img src="/assets/img/homeBtn.png" alt="">
+        </div>
+        
+    </div>
+
+</div>
+
+<app-edit-profile *ngIf="this.model.editProfile"></app-edit-profile>
+<app-loader></app-loader>
+
+

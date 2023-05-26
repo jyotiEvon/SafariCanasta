@@ -1,0 +1,126 @@
+<div class="setting" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">
+  <img src="/assets/img/setting.png" alt="">
+</div>
+
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+<div class="settingBoard">
+  <div class="frmField">
+    <p>Sound</p>
+    <label class="switch">
+      <input type="checkbox" id="togBtn"  [checked]=" this.model.gameSoundSetting" (click)="checkGameSound()">
+      <div class="slider round">
+      <!--ADDED HTML -->
+      <span class="on">On</span>
+      <span class="off">Off</span>
+      <!--END-->
+      </div>
+    </label>
+  </div>
+  <div class="frmField">
+    <p>Music</p>
+    <label class="switch">
+      <input type="checkbox" id="togBtn" [checked]="this.model.musicSetting " (click)="checkBgMusic()">
+      <div class="slider round">
+      <!--ADDED HTML -->
+      <span class="on" >On</span>
+      <span class="off" >Off</span>
+      <!--END-->
+      </div>
+    </label>
+  </div>
+  <div class="frmField" #infoCollapse="ngbCollapse" [(ngbCollapse)]="isInfoCollapse">
+    <button (click)="openInfo(help)">Info</button>
+  </div>
+  <div class="frmField">
+    <button (click)="startSound();quitGame()">Quit</button>
+  </div>
+  
+</div>
+</div>
+
+<!-- chat -->
+<div #aaa="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+<div class="chatBoard">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink (click)="startSound()">Messages</a>
+      <ng-template ngbNavContent>
+        <div class="chatWrap">
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('Yes')">Yes</button>
+              <button (click)="startSound();this.chatText('No')">No</button>
+              <button (click)="startSound();this.chatText('May I go out?')">May I go out? </button>
+            </div>
+            <p class="shadowLine">
+              <img src="/assets/img/shadow.png" alt="">
+            </p>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('Thank you')">Thank you</button>
+              <button (click)="startSound();this.chatText('You\'re welcome')">You're welcome</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('Wow, great play!')" >Wow, great play!</button>
+              <button (click)="startSound();this.chatText('Oops, sorry')" >Oops, sorry</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('Great game everyone!')" >Great game everyone!</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('We can turn this around!')" >We can turn this around!</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('It\'s not over till it\'s over !')"  >It's not over till it's over !</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('Best game ever!')">Best game ever!</button>
+              <button (click)="startSound();this.chatText('Rematch?')">Rematch?</button>
+            </div>
+            <div class="flexWrap">
+              <button (click)="startSound();this.chatText('That was a nail biter!')" >That was a nail biter!</button>
+            </div>
+
+        </div>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink (click)="startSound()">Emojis</a>
+      <ng-template ngbNavContent>
+        <div class="emojiWrap">
+          <button (click)="startSound();this.chatEmoji('1')" ><img src="/assets/img/emoji/1.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('2')"><img src="/assets/img/emoji/2.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('3')"><img src="/assets/img/emoji/3.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('4')"><img src="/assets/img/emoji/4.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('5')"><img src="/assets/img/emoji/5.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('6')"><img src="/assets/img/emoji/6.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('7')"><img src="/assets/img/emoji/7.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('8')"><img src="/assets/img/emoji/8.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('9')"><img src="/assets/img/emoji/9.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('10')"><img src="/assets/img/emoji/10.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('11')"><img src="/assets/img/emoji/11.png" alt=""></button>
+          <button (click)="startSound();this.chatEmoji('12')"><img src="/assets/img/emoji/12.png" alt=""></button>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div> 
+</div>
+<!-- chat -->
+
+<div class="chat" (click)="startSound();aaa.toggle()" [attr.aria-expanded]="!isCollapsed1">
+  <img src="/assets/img/chat.png" alt="">
+</div>
+<ng-template #help let-modal>
+  <div class="header-col">
+    <h2>HELP</h2>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="startSound(); modal.dismiss('Cross click')"
+    >
+      <img src="/assets/img/help/cross.png" alt="" />
+    </button>
+  </div>
+  <app-help></app-help>
+</ng-template>

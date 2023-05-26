@@ -1,0 +1,29 @@
+$fixheight: 62vh;
+.modalBg {
+    background: url(/assets/img/boardedited.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    height: 100%;
+    margin: 0 16px;
+   
+}
+.createRoomWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $fixheight;
+    flex-direction: column;
+    h3 {
+        color: #fff;
+        font-size: 32px;
+        // text-shadow: 0 0 4px rgba(38, 25, 1, 0.35);
+        text-shadow: 0 2px 2px rgb(38 25 1 / 35%);
+        font-weight: 800;
+        margin: 0;
+        font-family: 'kabrio';
+    }
+  
+   
+}
+
+

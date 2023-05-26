@@ -1,0 +1,260 @@
+$fixheight: 45vh;
+.outerWrap {
+    background: url(/assets/img/g2.png) left bottom no-repeat;
+    background-size: 100%;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+.modalBg {
+    background: url(/assets/img/boardedited.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    height: 100%;
+    margin: 0 16px;
+}
+.nav-tabs.nav {
+    border: none;
+    display: flex;
+    padding: 0 40px;
+    top: -25px;
+    position: relative;
+    .nav-item {
+        flex: 1;
+    }
+}
+.nav-tabs .nav-link {
+    background: url(/assets/img/unselected-Tab.png) no-repeat;
+    border-radius: 0;
+    background-size: 100% 100%;
+    font-family: "kabrio";
+    text-align: center;
+    color: #4c2619;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 12px 0 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    margin: 0 10px;
+    height: 58%;
+    &:hover, &:focus-visible {
+        border: none !important;
+        margin: 0 10px;
+        outline: none;
+    }
+    &.active {
+        background: url(/assets/img/selected-Tab.png) no-repeat;
+        border: none;
+        margin: 0;
+        background-size: 100% 100%;
+        position: relative;
+        z-index: 1;
+        height: 94px;
+        padding: 10px;
+        color: #fff;
+        text-shadow: 0 2px 2px #5d1412;
+        font-size: 25px;
+        &:hover, &:focus-visible {
+            border: none !important;
+            margin: 0;
+            outline: none;
+        }
+    }
+}
+
+
+.roomList {
+    padding: 0;
+    overflow-x: hidden;
+    max-height: 45vh;
+    margin: 0 7vw;
+    overflow-y: auto;
+    .listItem {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #a8854d;
+        padding: 10px 0;
+        img {
+            max-width: 18px;
+            &.ttl {
+                max-width: 80px;
+                margin-right: 20px;
+            }
+        }
+        p {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 0;
+            padding: 3px 0;
+            color: #462111;
+        }
+        &:first-child{
+            padding-top: 0;
+        }
+        &:last-child{
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    }
+    .joinBtn {
+        background: url(/assets/img/grnBtn.png) no-repeat center center;
+        color: #fff;
+        font-family: "kabrio";
+        font-size: 30px;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+        width: 158px;
+        background-size: cover;
+        padding: 5px 0;
+        border: none;
+        margin-left: auto;
+    }
+}
+.modal-footer {
+    border: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    top: -50px;
+    .home-btn {
+        padding: 0;
+        margin: 0 10px;
+    }
+}
+.blueBtn {
+    background: url(/assets/img/blueBtn.png) no-repeat center center;
+    font-family: "kabrio";
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    background-size: 100% 100%;
+    padding: 18px 30px;
+    border: none;
+}
+//   create Room
+.createRoomWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $fixheight;
+    flex-direction: column;
+    h3 {
+        color: #fff;
+        font-size: 32px;
+        // text-shadow: 0 0 4px rgba(38, 25, 1, 0.35);
+        text-shadow: 0 2px 2px rgb(38 25 1 / 35%);
+        font-weight: 800;
+        margin: 0;
+        font-family: 'kabrio';
+    }
+    input {
+        color: #48220b;
+        font-size: 32px;
+        font-weight: 800;
+        max-width: 360px;
+        text-align: center;
+        background: url(/assets/img/inputbox.png) no-repeat center center;
+        border: none;
+        padding: 10px;
+        background-size: 100% 100%;
+        margin: 15px 0;
+    }
+    h4 {
+        color: #48220b;
+        font-size: 18px;
+        font-weight: 800;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 14px;
+            margin-left: 8px;
+        }
+    }
+}
+//   create Room
+
+
+
+@media screen and (max-width:990px) {
+    .roomList {
+        margin: 0 80px;
+    }
+    .nav-tabs .nav-link{
+        font-size: 19px;
+        &.active{
+            font-size: 20px;
+        }
+    }
+    .playerTable .blueBtn{
+        font-size: 24px;
+    }
+   
+}
+// @media screen and ,
+@media screen and (max-width:700px) , (max-height:600px){
+    .blueBtn{
+        font-size: 22px;
+    }
+   
+    .roomList {
+        margin: 0 80px;
+        .joinBtn{
+            width: 15vw;
+            background-size: 100% 100%;
+            font-size: 22px;
+            padding: 3px 0;
+            max-width: 120px;
+        }
+        .listItem  {
+            border-bottom-width: 1px;
+            padding: 5px 0;
+            p{
+                font-size: 15px;
+                padding: 1px 0;
+            }
+            img{
+                max-width: 12px;
+                &.ttl{
+                    max-width: 50px;
+                }
+            }
+        }
+    }
+    .nav-tabs .nav-link,
+    .nav-tabs .nav-link:hover{
+        margin: 0 3px;
+    }
+    .createRoomWrap{
+         h3{
+            font-size: 25px;
+        }
+        input{
+            max-width: 45vw;
+            padding: 3px 10px;
+            font-size: 23px;
+        }
+    }
+    
+}
+@media screen and (max-width:600px)  , (max-height:500px){
+    .roomList{
+        margin: 0 60px;
+    }
+    
+    .nav-tabs.nav{padding: 0 20px;align-items: center;}
+    .nav-tabs .nav-link{
+        font-size:15px;
+        &.active{
+            height: 74px;
+            font-size:16px;
+        }   
+    }
+   
+}
+

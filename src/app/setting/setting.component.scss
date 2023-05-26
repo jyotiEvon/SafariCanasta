@@ -1,0 +1,145 @@
+.nav-tabs.nav{
+    max-width: 350px;
+    margin: 0 auto;
+}
+.modalBg{
+    min-height:10px !important;
+    background-size: 100% 100% !important;
+    margin: 0 15px;
+    
+}
+
+.modal-footer.topNone{
+    top: -20px;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+}
+h2{
+    font-size: 6vh;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 800;
+    margin: 5vh 0;
+}
+.grnBtn{
+    background: url(/assets/img/grnBtn.png) no-repeat center center;
+    line-height: 1.2;
+    border: none;
+    padding: 28px 30px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    display: block;
+    span{
+        font-size: 4vh;
+        font-family: "kabrio";
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 0 2px 1px rgba(0,0,0,0.6);
+    }
+    p{
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+    }
+}
+.frmField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    p {
+        margin: 0;
+        color: #551410;
+        font-size: 2.7vh;
+        min-width: 120px;
+      }
+    button {
+        background: url(/assets/img/quitBg.png) no-repeat center center;
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        color: #fff;
+        padding: 8px;
+        background-size: 100% 100%;
+        font-weight: 500;
+    }
+}
+
+.switch {
+    background: url(/assets/img/on-offBg.png);
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 36px;
+    background-size: 100% 100%;
+}
+.switch input {
+    display: none;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 40%;
+    left: 6px;
+    bottom: 5px;
+    background: url(/assets/img/off.png);
+    -webkit-transition: .4s;
+    transition: .4s;
+    background-size: 100% 100%;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(43px);
+    -ms-transform: translateX(43px);
+    transform: translateX(43px);
+    background: url(/assets/img/on.png);
+    background-size: 100% 100%;
+}
+/*------ ADDED CSS ---------*/
+
+.on {
+    display: none;
+}
+.on, .off {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+.off {
+    left: auto;
+    right: 20px;
+}
+input:checked+.slider .on {
+    display: block;
+}
+input:checked+.slider .off {
+    display: none;
+}
+
+
+@media screen and (max-height:500px){
+    h2{
+        margin: 10px 0;
+    }
+    .grnBtn{
+        padding: 15px 30px;
+    }
+}
+

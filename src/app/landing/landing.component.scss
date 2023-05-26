@@ -1,0 +1,821 @@
+$fixheight: 45vh;
+.outerWrap {
+  background: url(/assets/img/g2.png) left bottom no-repeat;
+  background-size: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.sky {
+  background: url(/assets/img/sky.png) left bottom no-repeat;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+.tree {
+  background: url(/assets/img/treeLeft.png) left top no-repeat;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  z-index: 4;
+  pointer-events: none;
+}
+.cloud {
+  background: url(/assets/img/clouds.png) repeat-x;
+  position: absolute;
+  bottom: 36vh;
+  animation-name: example;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  height: 46vh;
+  width: 100%;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+.giraffe {
+  position: absolute;
+  left: -8vw;
+  bottom: 10vw;
+  z-index: 3;
+  height: 24vw;
+  width: 16vw;
+  .body {
+    background: url(/assets/img/giraffe/body.png) no-repeat center center;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .head {
+    background: url(/assets/img/giraffe/head.png) no-repeat center center;
+    background-size: 100% 100%;
+    width: 67%;
+    height: 40%;
+    position: absolute;
+    right: -35%;
+    top: -20%;
+    animation-name: headSake;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes headSake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.elephant {
+  position: absolute;
+  right: 0;
+  bottom: 10vw;
+  z-index: 3;
+  height: 24vw;
+  width: 16vw;
+  .body {
+    background: url(/assets/img/elephant/body.png) no-repeat center center;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .head {
+    background: url(/assets/img/elephant/head.png) no-repeat center center;
+    background-size: 100% 100%;
+    width: 90%;
+    height: 50%;
+    position: absolute;
+    right: 36%;
+    top: 6%;
+    animation-name: headSake;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes example {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+.userActionTop {
+  position: absolute;
+  top: 0;
+  z-index: 88;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  .user,
+  .life {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h4 {
+      color: #fff;
+      font-family: "kabrio";
+      font-size: 170%;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+      margin: 0 10px;
+    }
+    img {
+      max-width: 5vw;
+    }
+    button {
+      background: transparent;
+      border: none;
+      img {
+        display: block;
+        max-width: 2.4vw;
+      }
+    }
+  }
+  .user img {
+    cursor: pointer;
+    transition: ease-in 0.3s;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+  .life img {
+    max-width: 2.5vw;
+  }
+}
+.leaveWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .leaveTopL,
+  .leaveTopR {
+    max-width: 18vw;
+    transform: rotateY(180deg);
+    img {
+      max-width: 100%;
+    }
+  }
+  .leaveTopL {
+    max-width: 25vw;
+  }
+}
+.topIg {
+  pointer-events: none;
+}
+.logoLobby {
+  position: absolute;
+  width: 35vw;
+  // left: 0;
+  // right: 0;
+  // margin: 4vh auto auto;
+  // top: 0;
+
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+  .loinFace {
+    position: absolute;
+    top: 3vw;
+    width: 3.5vw;
+    left: 4.3vw;
+    animation-name: loinFace;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+  }
+  @keyframes loinFace {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .nameShade {
+    position: absolute;
+    top: -10px;
+    z-index: 0;
+    animation-name: board;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+    z-index: -1;
+  }
+  @keyframes board {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .board {
+    position: absolute;
+    max-width: 23vw; // bottom: -10vh;
+    color: #fff;
+    font-family: "kabrio";
+    font-size: 2.7vw;
+    text-transform: uppercase;
+    margin: auto;
+    text-align: center;
+    bottom: 1.5vh;
+    left: 0;
+    right: 0;
+    text-shadow: 1px 2px 2px #000;
+    // overflow: hidden;
+    &:after {
+      content: "";
+      height: 100%;
+      width: 30px;
+      background: #fff;
+      position: absolute;
+      filter: blur(1px);
+      left: 0;
+      padding: 14%;
+      top: -10px;
+      opacity: 0;
+      transform: translateX(0px) skewX(-15deg);
+      animation-name: shine;
+      animation-duration: 0.9s;
+      animation-iteration-count: 3;
+      transition-timing-function: linear;
+      animation-delay: 4s;
+    }
+    @keyframes shine {
+      0% {
+        transform: translateX(0px) skewX(-15deg);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(120px) skewX(-15deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateX(230px) skewX(-15deg);
+        opacity: 0;
+      }
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.stoneWrap {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  .bushes,
+  .shop {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    max-width: 14vw;
+  }
+  .bushes {
+    max-width: 16vw;
+    left: 9vw;
+  }
+  .shrub,
+  .lboard {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 14vw;
+  }
+  .lboard span {
+    max-width: 6vw;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 18vw;
+  }
+  .shrub {
+    max-width: 5vw;
+    z-index: 1;
+  }
+  .setting {
+    position: absolute;
+    left: 33vw;
+    bottom: 0;
+    max-width: 6vw;
+  }
+  .share {
+    position: absolute;
+    left: 39vw;
+    bottom: 0;
+    max-width: 14vw;
+  }
+  .stone {
+    position: absolute;
+    left: 46vw;
+    bottom: 0;
+    max-width: 18vw;
+  }
+}
+.stoneWrap {
+  .shop,
+  .setting,
+  .share,
+  .lboard {
+    img {
+      cursor: pointer;
+      transition: 0.5s all ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.modalBg {
+  background: url(/assets/img/boardedited.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 0;
+  height: 100%;
+  margin: 0 16px;
+}
+.nav-tabs.nav {
+  border: none;
+  display: flex;
+  padding: 0 40px;
+  top: -25px;
+  position: relative;
+  .nav-item {
+    flex: 1;
+  }
+}
+.nav-tabs .nav-link {
+  background: url(/assets/img/unselected-Tab.png) no-repeat;
+  border-radius: 0;
+  background-size: 100% 100%;
+  font-family: "kabrio";
+  text-align: center;
+  color: #4c2619;
+  text-transform: uppercase;
+  font-size: 24px;
+  padding: 12px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  margin: 0 10px;
+  height: 58%;
+  &:hover,
+  &:focus-visible {
+    border: none !important;
+    margin: 0 10px;
+    outline: none;
+  }
+  &.active {
+    background: url(/assets/img/selected-Tab.png) no-repeat;
+    border: none;
+    margin: 0;
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 1;
+    height: 94px;
+    padding: 10px;
+    color: #fff;
+    text-shadow: 0 2px 2px #5d1412;
+    font-size: 25px;
+    &:hover,
+    &:focus-visible {
+      border: none !important;
+      margin: 0;
+      outline: none;
+    }
+  }
+}
+
+.roomList {
+  padding: 0;
+  overflow-x: hidden;
+  max-height: 45vh;
+  margin: 0 7vw;
+  overflow-y: auto;
+  .listItem {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #a8854d;
+    padding: 10px 0;
+    img {
+      max-width: 18px;
+      &.ttl {
+        max-width: 80px;
+        margin-right: 20px;
+      }
+    }
+    p {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0;
+      padding: 3px 0;
+      color: #462111;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  .joinBtn {
+    background: url(/assets/img/grnBtn.png) no-repeat center center;
+    color: #fff;
+    font-family: "kabrio";
+    font-size: 30px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+    width: 158px;
+    background-size: cover;
+    padding: 5px 0;
+    border: none;
+    margin-left: auto;
+  }
+}
+.modal-footer {
+  border: none;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  top: -50px;
+  .home-btn {
+    padding: 0;
+    margin: 0 10px;
+  }
+}
+.value-lbl {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 8px 5px 0;
+
+  color: #fff;
+  text-shadow: 0 2px 4px BLACK;
+}
+.blueBtn {
+  background: url(/assets/img/blueBtn.png) no-repeat center center;
+  font-family: "kabrio";
+  color: #fff;
+  font-size: 30px;
+  margin: 0;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+  background-size: 100% 100%;
+  padding: 18px 30px;
+  border: none;
+}
+
+.orng-btn{
+  background: url(/assets/img/signup-btn.png) no-repeat center center;
+  font-family: "kabrio";
+  font-size: 25px;
+  color: #fff;
+  height: 56px;
+  width: 170px;
+  background-size: 100% 100%;
+  border: none;
+  text-shadow: 2px 3px 1px #c43f01;
+  margin-bottom: 30px;
+}
+
+
+
+//   create Room
+.createRoomWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $fixheight;
+  flex-direction: column;
+  h3 {
+    color: #fff;
+    font-size: 32px;
+    text-shadow: 0 0 4px rgba(38, 25, 1, 0.35);
+    font-weight: 800;
+    margin: 0;
+  }
+  input {
+    color: #48220b;
+    font-size: 32px;
+    font-weight: 800;
+    max-width: 360px;
+    text-align: center;
+    background: url(/assets/img/inputbox.png) no-repeat center center;
+    border: none;
+    padding: 10px;
+    background-size: 100% 100%;
+    margin: 15px 0;
+  }
+  h4 {
+    color: #48220b;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 14px;
+      margin-left: 8px;
+    }
+  }
+}
+//   create Room
+// player Table
+.playerTable {
+  position: relative;
+  height: $fixheight;
+  .blueBtn {
+    font-size: 30px;
+    padding: 11px 50px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 8.5vw;
+    bottom: 2vh;
+  }
+  .playerTab {
+    position: absolute;
+    text-align: center;
+    border-radius: 15px;
+    .imgWrap {
+      border: 2px solid #f90010;
+      border-radius: 15px;
+      padding: 5px;
+      background: #fff;
+      max-width: 80px;
+      margin: 0 auto;
+      position: relative;
+      img {
+        max-width: 100%;
+      }
+      span {
+        position: absolute;
+        background: #f90010;
+        color: #fff;
+        font-style: italic;
+        font-size: 13px;
+        padding: 0 10px;
+        font-weight: 600;
+        right: -30px;
+        top: 17px;
+      }
+      &.blueBg {
+        border-color: #008efd;
+        span {
+          background: #008efd;
+        }
+      }
+    }
+    p {
+      background: url(/assets/img/nameBoard.png);
+      color: #fff;
+      text-transform: uppercase;
+      margin: -2px auto 0;
+      background-position: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-shadow: 0 0px 3px #222;
+      padding: 5px 10px;
+      border-radius: 10px;
+      max-width: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    button {
+      background: #cfa865;
+      border: none;
+      color: #fff;
+      position: relative;
+      border-radius: 50px;
+      box-shadow: -1px 3px 0px #b0905a;
+      padding: 5px 35px 5px 15px;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 12px;
+      img {
+        position: absolute;
+        right: -8px;
+        max-width: 35px;
+        display: block;
+        top: 0;
+      }
+    }
+  }
+  .p1,
+  .p4 {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .p2 {
+    left: 10vw;
+    top: calc(50% - 75px);
+  }
+  .p3 {
+    right: 10vw;
+    top: calc(50% - 75px);
+  }
+  .p4 {
+    top: auto;
+    bottom: 20px;
+  }
+}
+// player Table
+
+@media screen and (max-width: 990px) {
+  .roomList {
+    margin: 0 80px;
+  }
+  .nav-tabs .nav-link {
+    font-size: 19px;
+    &.active {
+      font-size: 20px;
+    }
+  }
+  .playerTable .blueBtn {
+    font-size: 24px;
+  }
+  .giraffe {
+    left: -3vw;
+    height: 24vw;
+    width: 13vw;
+    .head {
+      width: 57%;
+      height: 30%;
+      right: -33%;
+      top: -13%;
+    }
+  }
+}
+// @media screen and ,
+@media screen and (max-width: 700px), (max-height: 600px) {
+  .blueBtn {
+    font-size: 22px;
+  }
+
+  .roomList {
+    margin: 0 80px;
+    .joinBtn {
+      width: 15vw;
+      background-size: 100% 100%;
+      font-size: 22px;
+      padding: 3px 0;
+      max-width: 120px;
+    }
+    .listItem {
+      border-bottom-width: 1px;
+      padding: 5px 0;
+      p {
+        font-size: 15px;
+        padding: 1px 0;
+      }
+      img {
+        max-width: 12px;
+        &.ttl {
+          max-width: 50px;
+        }
+      }
+    }
+  }
+  .nav-tabs .nav-link,
+  .nav-tabs .nav-link:hover {
+    margin: 0 3px;
+  }
+  .createRoomWrap {
+    h3 {
+      font-size: 25px;
+    }
+    input {
+      max-width: 45vw;
+      padding: 3px 10px;
+      font-size: 23px;
+    }
+  }
+}
+@media screen and (max-width: 600px), (max-height: 500px) {
+  .roomList {
+    margin: 0 60px;
+  }
+
+  .nav-tabs.nav {
+    padding: 0 20px;
+    align-items: center;
+  }
+  .nav-tabs .nav-link {
+    font-size: 15px;
+    &.active {
+      height: 74px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px), (max-height: 750px) {
+  .playerTable {
+    .playerTab {
+      p {
+        font-size: 10px;
+        padding: 3px 10px;
+        max-width: 90px;
+        border-radius: 4px;
+      }
+      .imgWrap {
+        max-width: 50px;
+        span {
+          font-size: 10px;
+          right: -28px;
+        }
+      }
+      button {
+        font-size: 11px;
+        padding: 3px 31px 2px 10px;
+        margin-top: 5px;
+        img {
+          max-width: 26px;
+        }
+      }
+    }
+    .p1 {
+      top: -30px;
+    }
+    .p4 {
+      bottom: 0px;
+    }
+  }
+  .playerTable .blueBtn {
+    font-size: 15px;
+    padding: 5px 25px;
+  }
+}
+
+@media  screen and (max-height: 500px) {
+  .value-lbl {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  .tree {
+    background-size: 100%;
+    width: 60%;
+  }
+  .stoneWrap {
+    .shop {
+      max-width: 11vw;
+      bottom: -2px;
+    }
+  }
+
+  .modalBg {
+    height: 82vh;
+    margin-top: 5vh;
+  }
+  .profile-modal-body.modalBg {
+    height: 89vh;
+    margin-top: 5vh;
+  }
+  .blueBtn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,38 @@
+<section>
+    <div class="chat-seat-1" *ngIf="this.model.chatPopup1.display">
+        <div class="chat-pop" *ngIf="this.model.chatPopup1.text.length?true:false">
+            <div class="text">{{this.model.chatPopup1.text}}</div>
+        </div>
+        <div class="emoji" *ngIf="this.model.chatPopup1.emoji?true:false">
+            <img src="/assets/img/emoji/{{this.model.chatPopup1.emoji}}.png" alt="">
+        </div>
+    </div>                                                                                    
+
+    <div class="chat-seat-2" *ngIf="this.model.chatPopup2.display">
+        <div class="chat-pop" *ngIf="this.model.chatPopup2.text.length?true:false">
+            <div class="text">{{this.model.chatPopup2.text}}</div>
+        </div>
+        <div class="emoji" *ngIf="this.model.chatPopup2.emoji?true:false">
+            <img src="/assets/img/emoji/{{this.model.chatPopup2.emoji}}.png" alt="">
+        </div>
+    </div>
+
+    <div class="chat-seat-3" *ngIf="this.model.chatPopup3.display">
+        <div class="chat-pop" *ngIf="this.model.chatPopup3.text.length?true:false">
+            <div class="text">{{this.model.chatPopup3.text}}</div>
+        </div>
+        <div class="emoji" *ngIf="this.model.chatPopup3.emoji?true:false">
+            <img src="/assets/img/emoji/{{this.model.chatPopup3.emoji}}.png" alt="">
+        </div>
+    </div>
+
+    <div class="chat-seat-4" *ngIf="this.model.chatPopup4.display">
+        <div class="chat-pop" *ngIf="this.model.chatPopup4.text.length?true:false">
+            <div class="text">{{this.model.chatPopup4.text}}</div>
+        </div>
+        <div class="emoji" *ngIf="this.model.chatPopup4.emoji?true:false">
+            <img src="/assets/img/emoji/{{this.model.chatPopup4.emoji}}.png" alt="">
+        </div>
+    </div>
+
+</section>

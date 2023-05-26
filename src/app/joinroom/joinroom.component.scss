@@ -1,0 +1,47 @@
+$fixheight: 82vh;
+.modalBg {
+    background: url(/assets/img/boardedited.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    height: 100%;
+    margin: 0 16px;
+}
+.createRoomWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $fixheight;
+    flex-direction: column;
+    h3 {
+        color: #fff;
+        font-size: 32px;
+        text-shadow: 0 0 4px rgba(38, 25, 1, 0.35);
+        font-weight: 800;
+        margin: 0;
+    }
+    input {
+        color: #48220b;
+        font-size: 32px;
+        font-weight: 800;
+        max-width: 360px;
+        text-align: center;
+        background: url(/assets/img/inputbox.png) no-repeat center center;
+        border: none;
+        padding: 10px;
+        background-size: 100% 100%;
+        margin: 15px 0;
+    }
+    h4 {
+        color: #48220b;
+        font-size: 18px;
+        font-weight: 800;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 14px;
+            margin-left: 8px;
+        }
+    }
+}

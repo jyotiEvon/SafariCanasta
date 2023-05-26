@@ -1,0 +1,60 @@
+<div class="modal-body edit-pf-bg">
+    <form class="edit-profile-frame" #form="ngForm"  (ngSubmit)="saveDetails()">
+        <div class="frame-row">
+            <!-- <input type="text"  name="usernameVal" class="username-lbl" /> -->
+            <h3 class="lbl">User Name:</h3>
+            <input type="text"   [(ngModel)] = "user.username" name="usernameVal" class="username-lbl"
+            pattern="^[a-zA-Z0-9_]{3,15}" #username="ngModel" required>
+            <!-- error msg -->
+            <div *ngIf="username.invalid &&( username.dirty || username.touched)">
+                <div *ngIf="username.errors?.['required']">*Username is required</div>
+                <div *ngIf="username.errors?.['minlength']">*Username must be alteast  3 characters long</div>
+                <div *ngIf="username.errors?.['maxlength']">*Username cannot be more than 15 characters long</div>
+                <div *ngIf=" user.username.length>2 && user.username.length<15  && username.errors?.['pattern']">*Username field should not contains space and special char</div>
+              </div>
+
+        </div><!--frame-row//-->
+        <div class="frame-row">
+            <h3 class="lbl">Old Password:</h3>
+            <input type="password" placeholder="********" name="oldPassword" [(ngModel)] = "user.oldPassword" minlength="8" #oldPassword="ngModel"/>
+         <!-- error msg -->
+            <div *ngIf="oldPassword.invalid &&( oldPassword.dirty || oldPassword.touched)">
+                <div *ngIf="oldPassword.errors?.['minlength']">*Password cannot be less then 8 characters</div>
+            </div>
+
+        </div><!--frame-row//-->
+        <div class="frame-row">
+            <h3 class="lbl">New Password:</h3>
+            <input type="password" placeholder="********" name="newPassword" [(ngModel)] = "user.newPassword" #newPassword="ngModel" minlength="8" />
+                <div *ngIf="newPassword.invalid &&( newPassword.dirty || newPassword.touched)">
+                    <div *ngIf="newPassword.errors?.['minlength']">*Password cannot be less then 8 characters</div>
+                </div>
+        </div><!--frame-row//-->
+
+        <div class="modal-footer btn-row">
+            <!-- <div *ngFor="let n of btnList">
+                <button type="button" class="btn m-2"  aria-label="Close"  (click)="closePoup();select(n)" [ngClass]="{active: isActive(n)}">
+                    {{n}}
+                </button>
+            </div> -->
+            <button type="button" class="btn-cancel m-2"  aria-label="Close"  (click)="closePoup() ;isClicked(0)" [ngClass]="this.btnClicked[0]?'active':'btn'">
+                Cancel
+            </button>
+            <button type="submit" class="m-2 btn-confirm" [disabled]="form.invalid" [class.disabled-button]="form.invalid" aria-label="Close" (click)="isClicked(1)" [ngClass]="this.btnClicked[1]?'active':'btn'">
+                Save Changes
+                <!-- <span *ngIf="form.invalid" class="btn-confirm-text">Please fill all the fields</span> -->
+            </button>
+        </div><!--btn-row//-->
+    </form><!--edit-profile-frame//-->
+
+    <ng-container *ngIf="showErrorMsg">
+        <div class="errorMsg">
+            <span class="err-icon">!</span>
+            {{ this.errorMsg}}
+        </div>
+        </ng-container>
+</div>
+
+<app-loader></app-loader>
+
+

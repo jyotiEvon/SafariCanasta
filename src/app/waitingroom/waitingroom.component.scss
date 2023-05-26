@@ -1,0 +1,295 @@
+$fixheight: 82vh;
+.modalBg {
+    background: url(/assets/img/boardedited.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    height: 100%;
+    margin: 0 16px;
+}
+.blueBtn {
+    background: url(/assets/img/blueBtn.png) no-repeat center center;
+    font-family: "kabrio";
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    background-size: 100% 100%;
+    padding: 18px 30px;
+    border: none;
+}
+.blueBtn {
+    font-size: 30px;
+    padding: 11px 50px;
+    text-transform: uppercase;
+    position: absolute;
+    // right: 8.5vw;
+    // bottom: 2vh;
+    right: 7vw;
+    bottom: 7vh;
+}
+.playerTable {
+    position: relative;
+    height: $fixheight;
+
+    .playerTab {
+        position: absolute;
+        text-align: center;
+        border-radius: 15px;
+        .imgWrap {
+            border: 2px solid #f90010;
+            border-radius: 15px;
+            padding: 5px;
+            background: #fff;
+            max-width: 80px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+
+            .tag-lbl {
+                font: bold 13px sans-serif;
+                color: #333;
+                text-align: center;
+                -webkit-transform: rotate(-42deg);
+                -moz-transform:    rotate(-42deg);
+                -ms-transform:     rotate(-42deg);
+                -o-transform:      rotate(-42deg);
+                transform: rotate(-42deg);
+                position: absolute;
+                padding: 8px 0px 2px;
+                top: -4px;
+                left: -23px;
+                width: 70px;
+
+                color: #fff;
+            }
+            .blue-lbl {
+                background-color: #008efd;
+            }
+            .red-lbl {
+                background-color: #F90010;
+            }
+            img {
+                max-width: 100%;
+            }
+            span {
+                position: absolute;
+                background: #f90010;
+                color: #fff;
+                font-style: italic;
+                font-size: 13px;
+                padding: 0 10px;
+                font-weight: 600;
+                right: -30px;
+                top: 17px;
+            }
+            &.blueBg {
+                border-color: #008efd;
+                span {
+                    background: #008efd;
+                }
+            }
+        }
+        p {
+            background: url(/assets/img/nameBoard.png);
+            color: #fff;
+            text-transform: uppercase;
+            margin: -2px auto 0;
+            background-position: center;
+            font-size: 12px;
+            font-weight: 600;
+            text-shadow: 0 0px 3px #222;
+            padding: 5px 10px;
+            border-radius: 10px;
+            max-width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        button {
+            background: #cfa865;
+            border: none;
+            color: #fff;
+            position: relative;
+            border-radius: 50px;
+            box-shadow: -1px 3px 0px #b0905a;
+            padding: 5px 35px 5px 15px;
+            font-size: 13px;
+            font-style: italic;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 12px;
+            img {
+                position: absolute;
+                right: -8px;
+                max-width: 35px;
+                display: block;
+                top: 0;
+            }
+        }
+    }
+    .p1, .p4 {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .p1{
+        top: 10vh;
+    }
+    .p2 {
+        left: 10vw;
+        // top: calc(50% - 75px);
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    .p3 {
+        right: 10vw;
+        // top: calc(50% - 75px);
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    .p4 {
+        top: auto;
+        // bottom: 20px;
+        bottom: 8vh;
+    }
+}
+.btn-blue-grd {
+    background: url(../../assets/img/blueBtn.png) center center no-repeat;
+    min-height: 60px;
+    min-width: 170px;
+    background-size: 100% 100%;
+    border:none;
+    margin: auto auto;
+    font-family: "kabrio";
+    font-size: 29px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 3px 3px #333;
+
+
+}
+.btn-quit{
+    left: 85px;
+    position: absolute;
+    bottom: 60px;
+}
+
+
+@media screen and (max-width:700px) , (max-height:600px){
+    .blueBtn{
+        font-size: 22px;
+       
+    }
+   
+    .roomList {
+        margin: 0 80px;
+        .joinBtn{
+            width: 15vw;
+            background-size: 100% 100%;
+            font-size: 22px;
+            padding: 3px 0;
+            max-width: 120px;
+        }
+        .listItem  {
+            border-bottom-width: 1px;
+            padding: 5px 0;
+            p{
+                font-size: 15px;
+                padding: 1px 0;
+            }
+            img{
+                max-width: 12px;
+                &.ttl{
+                    max-width: 50px;
+                }
+            }
+        }
+    }
+    .nav-tabs .nav-link,
+    .nav-tabs .nav-link:hover{
+        margin: 0 3px;
+    }
+    .createRoomWrap{
+         h3{
+            font-size: 25px;
+        }
+        input{
+            max-width: 45vw;
+            padding: 3px 10px;
+            font-size: 23px;
+        }
+    }
+    
+}
+@media screen and (max-width:600px)  , (max-height:500px){
+    .roomList{
+        margin: 0 60px;
+    }
+    
+    .nav-tabs.nav{padding: 0 20px;align-items: center;}
+    .nav-tabs .nav-link{
+        font-size:15px;
+        &.active{
+            height: 74px;
+            font-size:16px;
+        }   
+    }
+   
+}
+
+@media screen and (max-width:700px)  , (max-height:650px){
+    .playerTable {
+        .playerTab{
+            p{
+                font-size: 10px;
+                padding: 3px 10px;
+                max-width: 90px;
+                border-radius: 4px;
+            }
+            .imgWrap{
+                // max-width: 50px;
+                span{
+                    font-size: 10px;
+                    right: -28px;
+                }
+            }
+            button{
+                font-size: 11px;
+                padding: 3px 31px 2px 10px;
+                margin-top: 5px;
+            
+                img{
+                    max-width: 26px;
+                }
+            }
+        }
+        .p1{
+            // top: 36px;
+            top: 10vh;
+        }
+        .p4{
+            // bottom: 30px;
+            bottom: 8vh;
+        }
+    }
+    .blueBtn{
+        font-size: 15px;
+        padding: 5px 25px;
+        // bottom: 32px;
+        bottom: 7.5vh;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .modal-body {
+        height: 94vh;
+        margin-top: -3vh;
+    }
+    .btn-blue-grd {
+        font-size: 18px;
+        min-height: 40px;
+        min-width: 90px;
+        // bottom: -8px;
+    }
+}

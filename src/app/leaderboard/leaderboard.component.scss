@@ -1,0 +1,212 @@
+.leaderBoardWrap{
+    background: url(/assets/img/boardedited.png) no-repeat center center;
+    background-size: 100% 100%;
+    height: 600px;
+    width: 100%;
+    padding: 70px 80px;
+    .value-lbl {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 8px 5px 0;
+      
+        color: #fff;
+        text-shadow: 0 2px 4px BLACK;
+      }
+    .tableWrap{
+        overflow: auto;
+        height: 100%;
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            tr{
+                td{
+                    padding: 3px 5px;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #4b2616;
+                    vertical-align: middle;
+                    border-bottom: 1px solid #a8854f;
+                    .userThumb{
+                        max-width: 70px;
+                        img{
+                            max-width: 100%;
+                        }
+                    }
+                    // .value-lbl {
+                    //     font-size: 28px;
+                    //     font-weight: 600;
+                    //     margin: 8px 5px 0;
+                      
+                    //     color: #fff;
+                    //     text-shadow: 0 2px 4px BLACK;
+                    //   }
+                    &.gems{
+                        color: #fff;
+                        // font-family: "kabrio";
+                        font-family: 'Taz-UltraBlack';
+                        font-size: 24px;
+                        font-weight: 600;
+                        text-shadow:0 3px 0px rgba(0, 0, 0, 0.3);
+                        img{
+                            max-width: 20px;
+                        }
+                    }
+                    p{
+                        font-size: 24px;
+                        color: #fff;
+                        margin: 0;
+                        background: url(/assets/img/inputbox.png) no-repeat center center;
+                        padding: 6px 20px;
+                        background-size: 100% 100%;
+                        width: 200px;
+                        text-align: center;
+                        position: relative;
+                        span{
+                            background: #d14842;
+                            padding: 8px 15px 5px;
+                            font-family: "kabrio";
+                            font-size: 18px;
+                            position: absolute;
+                            left: -61px;
+                            top: 9px;
+                            text-transform: uppercase;
+                            line-height: 16px;
+                            text-shadow: 0 3px 0 rgba(0,0,0,0.2);
+                            font-weight: normal;
+                        }
+                    }
+                   
+                    &:nth-child(1){
+                        width: 7%;
+                        span{                
+                            display: inline-block;
+                            font-size: 24px;
+                            width: 50px;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            &.a1{
+                                background: url(/assets/img/1.png) no-repeat center center;
+                                background-size: cover;
+                                color: #4f6222;
+                            }
+                            &.b{
+                                background: url(/assets/img/2.png) no-repeat center center;
+                                background-size: cover;
+                                color: #4f7779;
+                            }
+                            &.c{
+                                background: url(/assets/img/3.png) no-repeat center center;
+                                background-size: cover;
+                                color: #843e3c;
+                            }
+                        }
+                    }
+                    &:nth-child(2){width: 13%;}
+                    &:nth-child(3){width: 25%;}
+                    &:nth-child(4){width: 19%;}
+                    &:nth-child(5){
+                        width: 36%;
+                        p{
+                            float: right;
+                        }
+                    }
+                }
+                &:last-child td{
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+                &.you{
+                    .wtxt{
+                        color: #fff;text-shadow: 0 3px 0px rgba(0, 0, 0, 0.3);
+                        font-size: 24px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+                    td{
+                        background: #c9a573;
+                    }
+                }
+            }
+        }
+    }
+}
+.modal-body{
+    position: relative;
+    .titleHead{
+        background: url(/assets/img/selected-Tab.png) no-repeat center center;
+        color: #fff;
+        font-family: "kabrio";
+        font-size: 32px;
+        text-transform: uppercase;
+        position: absolute;
+        text-shadow: 0 1px 5px #682216, 0 -2px 0px #682216;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        background-size: 100% 100%;
+        max-width: 339px;
+        height: 93px;
+        top: -10px;
+    }
+    .homeBtn{
+        position: absolute;
+        max-width: 70px;
+        left: 0;
+        right: 0;
+        bottom: -20px;
+        padding: 0;
+        margin: auto;
+        background: transparent;
+        border: none;
+        img{
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+
+@media screen and (max-height:685px){
+    .leaderBoardWrap{
+        height: calc(100vh - 80px);
+        overflow: auto;
+    }
+}
+
+
+@media screen and (max-width:865px){
+    .leaderBoardWrap .tableWrap table tr td {
+        .userThumb{
+            max-width: 55px;
+        }
+        &:nth-child(1) span{
+            height: 35px;
+            width: 35px;
+            font-size: 15px;
+        }
+        p{
+            width: 150px;
+            font-size: 18px;
+            text-align: right;
+        }
+        .tableWrap{
+            overflow: auto;
+        }
+    }
+}
+
+@media screen and (max-width:785px){
+    .leaderBoardWrap {
+        padding: 70px 50px 50px;
+        .tableWrap table {
+            width: 620px;
+        }
+    }
+
+}
