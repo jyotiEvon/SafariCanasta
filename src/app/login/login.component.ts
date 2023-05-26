@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     password: '',
     showPassword:false,
   }
- 
+  showText:boolean = false
   localData: any;
   errorMsg: string = '';
   showErrorMsg: boolean = false;
@@ -48,14 +48,24 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+  validateForm(isInvalid:any){
+    console.log('_IS_INVALIDATE',isInvalid)
+   this.showText = isInvalid?true:false;
+   if(!this.showText) return;
+   if(this.showText){
+    setTimeout(() => {
+      this.showText = false
+    }, 1000);
+   }
+  }
 
  
-  login() {
+  login(isInvalid:any) {
     this.startSound();
     let data;
     console.log('_loginDetails', this.user.username, this.user.password);
 
-    if (this.user.username != null &&this.user.password != null) {
+    if (!isInvalid) {
       this.model.showLoader = true;
 
       this.api.login(this.user.username,this.user.password).subscribe(
@@ -107,13 +117,7 @@ export class LoginComponent implements OnInit {
           console.log('_loginError', this.errorMsg);
         }
       );
-    } else {
-      this.showErrorMsg = true;
-      this.errorMsg = "Fields can't be empty";
-      setTimeout(() => {
-        this.showErrorMsg = false;
-      }, 2000);
-    }
+    } 
   }
 
   startSound() {

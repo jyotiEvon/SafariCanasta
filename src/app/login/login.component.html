@@ -18,7 +18,7 @@
                 <img src="/assets/img/leopeard/face.png" class="d-block mx-100" class="face">
                 <img src="/assets/img/leopeard/body.png" class="d-block mx-100">
             </div>
-            <form class="frmCol"  #form="ngForm" (ngSubmit)="login()">
+            <form class="frmCol"  #form="ngForm" (ngSubmit)="login(form.invalid)">
                 <h3>Sign In</h3>
                 <div class="inputWrap">
                     <input type="text"  name="username" placeholder="Enter User Name/ Email Address" 
@@ -53,8 +53,8 @@
                     </div>
                 </ng-container>
                 <label class="lbl-fp"><a href="" [routerLink]="['/fogotpassword']">Forgot Password</a></label>
-                <button type="submit" class="arrowBtn" [disabled]="form.invalid" [class.disabled-button]="form.invalid" (click)="startSound()" >
-                    <span *ngIf="form.invalid" class="arrowBtntext">Please fill all the fields</span>
+                <button type="submit" class="arrowBtn"  [ngClass]="form.invalid?'arrowBtn-disabled':''" (click)="startSound();validateForm(form.invalid)" >
+                    <span *ngIf="this.showText" class="arrowBtntext">Please fill all the fields</span>
                   </button>
             </form>
         </div>

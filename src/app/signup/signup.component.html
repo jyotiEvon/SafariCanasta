@@ -21,7 +21,7 @@
               <h3>Sign Up</h3>
               <!-- Input field -->
               <div class="inputWrap">
-                  <input type="text" id="username" name="username" placeholder="Enter User Name" [(ngModel)] = "user.username" minlength="3" maxlength="20"  class="from-control" #username="ngModel" required
+                  <input type="text" id="username" name="username" placeholder="Enter User Name *" [(ngModel)] = "user.username" minlength="3" maxlength="20"  class="from-control" #username="ngModel" required
                   pattern="^[a-zA-Z0-9_]{3,15}">
                   <!-- error msg -->
                   <div *ngIf="username.invalid &&( username.dirty || username.touched)">
@@ -32,7 +32,7 @@
                   </div>
               </div>
               <div class="inputWrap">
-                  <input type="email" name="email" placeholder="Enter Email Address"  [(ngModel)] = "user.email" class="from-control" #email="ngModel"  required 
+                  <input type="email" name="email" placeholder="Enter Email Address *"  [(ngModel)] = "user.email" class="from-control" #email="ngModel"  required 
                   pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
                    <!-- error msg -->
                    <div *ngIf="email.invalid &&( email.dirty ||email.touched)">
@@ -45,7 +45,7 @@
               <!-- <div class="errorMsg">{{this.model.authError}} </div> -->
 
               <div class="inputWrap">
-                <input  [type]="user.showPassword ? 'text' : 'password'" name="password" placeholder="Enter Password"  [(ngModel)] = "user.password" class="from-control" minlength="8" #password="ngModel" required>
+                <input  [type]="user.showPassword ? 'text' : 'password'" name="password" placeholder="Enter Password *"  [(ngModel)] = "user.password" class="from-control" minlength="8" #password="ngModel" required>
                 <span (click)="user.showPassword = !user.showPassword" [ngClass]="{'input-eye':user.showPassword, 'input-eye hide':!user.showPassword}" >
                   <i [ngClass]="{'far fa-eye':user.showPassword,'far fa-eye-slash':!user.showPassword}" ></i>
                 </span>

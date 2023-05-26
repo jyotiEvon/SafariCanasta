@@ -28,6 +28,12 @@
                     border-bottom: 1px solid #a8854f;
                     .userThumb{
                         max-width: 70px;
+                        @media screen and (max-width:865px){
+                            max-width: 55px;
+                        }
+                        @media screen and (max-height:685px){
+                            max-width: 40px;
+                        }
                         img{
                             max-width: 100%;
                         }
@@ -40,15 +46,27 @@
                     //     color: #fff;
                     //     text-shadow: 0 2px 4px BLACK;
                     //   }
-                    &.gems{
-                        color: #fff;
-                        // font-family: "kabrio";
-                        font-family: 'Taz-UltraBlack';
-                        font-size: 24px;
-                        font-weight: 600;
-                        text-shadow:0 3px 0px rgba(0, 0, 0, 0.3);
-                        img{
-                            max-width: 20px;
+                    &.gems{                       
+                        .gemsWrap{
+                            display: flex;
+                            align-items: center;
+                            span{
+                                color: #fff;
+                                font-family: 'Taz-UltraBlack';
+                                font-size: 24px;
+                                font-weight: 600;
+                                text-shadow:0 3px 0px rgba(0, 0, 0, 0.3);
+                                margin-left: 8px;
+                                @media screen and (max-width:865px){
+                                    font-size: 20px;
+                                }
+                                @media screen and (max-height:685px){
+                                    font-size: 18px;
+                                }
+                            }
+                            img{
+                                max-width: 20px;
+                            }
                         }
                     }
                     p{
@@ -104,7 +122,21 @@
                         }
                     }
                     &:nth-child(2){width: 13%;}
-                    &:nth-child(3){width: 25%;}
+                    &:nth-child(3){
+                        width: 25%;
+                        p{
+                            font-size: 18px;
+                            font-weight: 700;
+                            color: #4b2616;
+                            text-align: left;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            @media screen and (max-height:685px){
+                                font-size: 15px;
+                            }
+                        }
+                    }
                     &:nth-child(4){width: 19%;}
                     &:nth-child(5){
                         width: 36%;
@@ -182,9 +214,6 @@
 
 @media screen and (max-width:865px){
     .leaderBoardWrap .tableWrap table tr td {
-        .userThumb{
-            max-width: 55px;
-        }
         &:nth-child(1) span{
             height: 35px;
             width: 35px;

@@ -18,9 +18,15 @@
                             <img src="{{lboardInfo.avatar}}" alt="">
                         </div>
                     </td>
-                    <td>{{lboardInfo.username}}</td>
+                    <td>
+                        <p>{{lboardInfo.username}}</p>
+                    </td>
                     <td class="gems">
-                        <img src="/assets/img/gems.png" alt=""> {{lboardInfo.gems}}
+                        <div class="gemsWrap">
+                            <img src="/assets/img/gems.png" alt="">
+                            <span>{{lboardInfo.gems}}</span>
+                        </div>
+                        
                     </td>
                     <!-- <td class="value-lbl">
                         <img src="/assets/img/gems.png" alt=""> {{lboardInfo.gems}}

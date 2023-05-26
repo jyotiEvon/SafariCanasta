@@ -29,14 +29,15 @@
                             *Verification code is required
                         </div>
                     </div>
+                    <ng-container *ngIf="showErrorMsg">
+                        <div class="errorMsg">
+                            <span class="err-icon">!</span>
+                            {{ this.errorMsg}}
+                        </div>
+                    </ng-container>
                     
                 </div>
-                <ng-container *ngIf="showErrorMsg">
-                    <div class="errorMsg">
-                        <span class="err-icon">!</span>
-                        {{ this.errorMsg}}
-                    </div>
-                </ng-container>
+                
 
                 <button class="btn-send-code btn-blue-grd " [disabled]="form.invalid" (click)="startSound()" [class.disabled-button]="form.invalid" >
                     Verify Code

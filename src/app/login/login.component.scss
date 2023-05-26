@@ -84,19 +84,11 @@
             margin: auto 0 0 auto;
             
         }
-        .arrowBtn{
-            background: url(/assets/img/enter.png) center center no-repeat;
-            min-height: 55px;
-            min-width: 50px;
-            background-size: 50px 55px;
-            border:none;
-            margin: auto 0 0 auto;
-            
-        }
-        .arrowBtn[disabled]{
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
+       
+        // .arrowBtn[disabled]{
+        //     opacity: 0.6;
+        //     cursor: not-allowed;
+        // }
 
         .arrowBtn .arrowBtntext {
             visibility: hidden;
@@ -337,4 +329,8 @@ p{
             top: 75%;
         }
     }
+}
+.arrowBtn-disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
 }
