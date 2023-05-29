@@ -46,7 +46,8 @@
                     //     color: #fff;
                     //     text-shadow: 0 2px 4px BLACK;
                     //   }
-                    &.gems{                       
+                    &.gems{     
+                                         
                         .gemsWrap{
                             display: flex;
                             align-items: center;
@@ -57,6 +58,10 @@
                                 font-weight: 600;
                                 text-shadow:0 3px 0px rgba(0, 0, 0, 0.3);
                                 margin-left: 8px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                max-width: 130px;
                                 @media screen and (max-width:865px){
                                     font-size: 20px;
                                 }
@@ -104,6 +109,15 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
+                            @media screen and (max-width:865px){
+                                width: 40px;
+                                height: 40px;
+                            }
+                            @media screen and (max-height:685px){
+                                width: 30px;
+                                height: 30px;
+                                font-size: 15px;
+                            }
                             &.a1{
                                 background: url(/assets/img/1.png) no-repeat center center;
                                 background-size: cover;
@@ -142,6 +156,7 @@
                         width: 36%;
                         p{
                             float: right;
+                            margin-left: 62px;
                         }
                     }
                 }
@@ -214,11 +229,6 @@
 
 @media screen and (max-width:865px){
     .leaderBoardWrap .tableWrap table tr td {
-        &:nth-child(1) span{
-            height: 35px;
-            width: 35px;
-            font-size: 15px;
-        }
         p{
             width: 150px;
             font-size: 18px;

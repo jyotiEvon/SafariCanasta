@@ -19,8 +19,14 @@ $fixheight: 62vh;
         // text-shadow: 0 0 4px rgba(38, 25, 1, 0.35);
         text-shadow: 0 2px 2px rgb(38 25 1 / 35%);
         font-weight: 800;
-        margin: 0;
         font-family: 'kabrio';
+        padding: 0px 25px;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        @media screen and (max-height:640px){
+            font-size: 25px;
+        }
     }
   
    

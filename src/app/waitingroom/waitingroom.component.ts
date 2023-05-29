@@ -62,6 +62,11 @@ export class WaitingroomComponent implements OnInit {
 
   ngOnInit(): void {
     this.calcSeat(false);
+    if(this.modal.isHost){
+      let  nonNullarr = this.modal.playersInRoom.filter(Boolean);
+      this.countPlayersInlobby = nonNullarr.length;
+    }
+
   }
 
   completeSelectedFeatures() {
@@ -99,8 +104,10 @@ export class WaitingroomComponent implements OnInit {
     console.log('LEAVE WAITING ROOM');
     this.modal.lobbydata?.leave();
     this.modalService.dismissAll();
+    // this.modal.isHost = false
     console.log('dismiss background');
     this.resetLobby();
+    
     // this.socketsvc.lobbyData.next({});
     this.router.navigateByUrl('/landing', { skipLocationChange: false });
     
@@ -110,7 +117,8 @@ export class WaitingroomComponent implements OnInit {
     console.log('A_BEFOREEE', this.you, this.top, this.right, this.left);
     this.resetSeats();
     this.modal.playersInRoom = [];
-    this.modal.roomCodeToJoinAndShare = ""
+    this.modal.roomCodeToJoinAndShare = "";
+    this.modal.isHost = false
     console.log('A_AFTERR', this.you, this.top, this.right, this.left);
   }
   resetSeats(){
@@ -145,7 +153,8 @@ export class WaitingroomComponent implements OnInit {
         // this.playersInRoom[parseInt(data.index) - 1] = data;
         let  nonNullarr = this.modal.playersInRoom.filter(Boolean);
         this.countPlayersInlobby = nonNullarr.length;
-        console.log('CheckPlayers', this.modal.playersInRoom, this.modal.myIndex);
+        console.log('CheckPlayers', this.modal.playersInRoom, this.modal.myIndex ,this.countPlayersInlobby);
+        console.log('01CheckPlayers', this.countPlayersInlobby);
         if (this.modal.myIndex > -1) this.calcSeat(false);
       }
     });
@@ -163,7 +172,7 @@ export class WaitingroomComponent implements OnInit {
       console.log(' this.countPlayersInlobby', this.countPlayersInlobby)
         if (data.isHost) {
           if(!this.modal.lobbydata.state.isGameStarted){
-            this.modal.isHost =false
+            
             this.leaveLobby();
           }
           // this.resetLobby()

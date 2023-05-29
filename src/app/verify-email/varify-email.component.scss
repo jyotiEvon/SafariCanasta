@@ -32,6 +32,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+          
             h3{
                 color:#fff;
                 text-align: center;
@@ -216,8 +217,8 @@ p{
         height: 100vh;
         background-position: center -30px;
         .frmCol {
-            padding: 0 25px;
-            margin: 35vh auto 0;
+            padding: 0 15px;
+            margin: 32vh auto 0;
             .inputWrap {
             margin: 8px 0 6px;
             .from-control{
@@ -226,8 +227,8 @@ p{
                 }
             }
             h3{
-                margin-bottom: 2vh;
-                margin-top: 0;
+                // margin-bottom: 2vh;
+                margin-top: 20px;
             }
         }
         .arrowBtn{
@@ -240,7 +241,7 @@ p{
 }
 @media screen and (max-height:450px){
     .outerWrap .frmWrap {
-        background-size: 72vw 80vh;
+        background-size: 85vw 94vh;
         .arrowBtn{
             min-height: 45px;
             min-width: 40px;
@@ -254,4 +255,13 @@ p{
         font-size: 15px;
     }
     
+}
+.txtEmail{
+    color: rgb(124, 75, 58);
+    font-size: 16px;
+    line-height: 20px;
+    @media screen and (max-height:450px){
+        font-size: 14px;
+        line-height: 18px;
+    }
 }

@@ -120,6 +120,38 @@
         flex: 1;
         padding: 0 0 0 10px;
         margin-left: 10px;
+        .countWrap {
+            display: flex;
+            align-items: center;
+            max-width: 260px;
+            margin: 0 auto 10px;
+            .countInner{                                
+                padding: 10px 15px 5px;
+                font-family: "kabrio";
+                font-size: 18px;
+                text-transform: uppercase;
+                line-height: 16px;
+                text-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+                font-weight: normal;
+                color: #fff;
+                width: 130px;
+                text-align: center;
+                &.victoryBg{
+                    background: #d14842;
+                }
+                &.defeatWrap{
+                    background-color: green;
+                }
+            }
+            .victoryCount {
+                margin-left: 14px;
+                text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.4);
+                font-size: 20px;
+                font-weight: 700;
+                color: #48220b;
+            }
+            
+        }
         ul{
             padding: 0;
             max-width: 260px;

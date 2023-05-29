@@ -27,6 +27,11 @@ $fixheight: 82vh;
     right: 7vw;
     bottom: 7vh;
 }
+
+.blueBtn[disabled]{
+    opacity: 0.6;
+            cursor: not-allowed;
+}
 .playerTable {
     position: relative;
     height: $fixheight;

@@ -50,8 +50,8 @@
     <button class="btn-send-code btn-blue-grd btn-quit" (click)="leaveLobby()">
         Quit 
     </button >
-    
-    <button type="button" class="blueBtn" (click)="startGame()" *ngIf=" this.modal.isHost&& this.countPlayersInlobby>3">Play</button>
+
+    <button type="button" class="blueBtn" (click)="startGame()" *ngIf=" this.modal.isHost" [disabled]='this.modal.isHost && this.countPlayersInlobby<=3'  >Play</button>
     <!-- <button type="button" class="blueBtn" (click)="startGame()" [disabled]="this.modal.playersInRoom.length>3 &&this.modal.isHost">Play</button> -->
 
 </div>
